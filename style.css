@@ -12,16 +12,15 @@ body {
             100% {
                 opacity: 1; */
 }
-
-html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y;
-  }
   
 /* mobile */
   @media (max-width: 800px) {
     html, body {
     overflow-x: hidden;
     }
+  }
+
+  #hero {
+    max-width: 100%;
   }
 
