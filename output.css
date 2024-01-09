@@ -1511,6 +1511,11 @@ video {
   padding-bottom: 2rem;
 }
 
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
