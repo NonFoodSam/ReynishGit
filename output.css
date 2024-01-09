@@ -906,6 +906,26 @@ video {
   width: 110%;
 }
 
+.w-\[150\%\] {
+  width: 150%;
+}
+
+.w-\[110vh\] {
+  width: 110vh;
+}
+
+.w-\[100vh\] {
+  width: 100vh;
+}
+
+.w-\[105\%\] {
+  width: 105%;
+}
+
+.w-\[103\%\] {
+  width: 103%;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
@@ -960,6 +980,18 @@ video {
 
 .max-w-\[60\%\] {
   max-width: 60%;
+}
+
+.max-w-screen-md {
+  max-width: 768px;
+}
+
+.max-w-screen-lg {
+  max-width: 1024px;
+}
+
+.max-w-\[110\%\] {
+  max-width: 110%;
 }
 
 .flex-auto {
