@@ -24,3 +24,11 @@ document.addEventListener('scroll', function () {
     header.classList.add('nav-bg-initial');
   }
 });
+
+document.getElementById('scrollButton').addEventListener('click', function() {
+  // Scroll smoothly to the halfway point of the page
+  window.scroll({
+      top: document.documentElement.scrollHeight / 2,
+      behavior: 'smooth'
+  });
+});
