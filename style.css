@@ -13,6 +13,15 @@ body {
                 opacity: 1; */
 }
 
+.nav-bg-initial {
+  background: linear-gradient(to bottom, #202020, /* your initial background color */);
+}
+
+.nav-bg-scrolled {
+  background: linear-gradient(to bottom, #e21414, /* your scrolled background color */);
+}
+
+
 /* #background {
   background-image: url(img/IMG_2738.jpg);
   height: 100vh;
@@ -37,4 +46,3 @@ body {
     max-width: 100%;
   }
 
-  

@@ -20,13 +20,8 @@
   </head>
   <body>
     <div class="bg-[#171717] h-screen" x-data="{ openMenu : false }">
-      <header
-        class="fixed inset-x-0 top-0 z-50 bg-gradient-to-b from-[#202020] from-20%"
-      >
-        <nav
-          class="flex items-center justify-between p-6 lg:px-8"
-          aria-label="Global"
-        >
+      <header class="fixed inset-x-0 top-0 z-50 bg-gradient-to-b from-[#202020] nav-bg-initial">
+  <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
             <a href="index.html" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
@@ -174,9 +169,10 @@
       >
         <div class="mb-4 flex justify-center">
           <div
+            href="portfolio.html"
             class="animate-pulse relative rounded-full px-3 py-1 text-xs leading-6 text-white ring-1 ring-white/10 hover:ring-white/20"
           >
-            See recent examples of our work.
+            <a href="portfolio.html">See recent examples of our work.</a>
             <a
               href="portfolio.html"
               class="font-semibold text-white hidden sm:inline"
@@ -916,8 +912,7 @@
                 Audio Engineer
               </p>
               <p class="mt-6 text-lg leading-8 text-gray-300">
-                Jordan has a bunch of experience doing things with music and
-                that. He has all of these skills that you can look at below?
+                Jordan is a dedicated audio engineer with a wealth of expertise in the realm of music. His proficiency spans a variety of roles, making him a versatile asset to any project. Here are some of his notable skills:
               </p>
               <ul
                 role="list"
@@ -1054,13 +1049,13 @@
     />
     <div class="bg-transparent py-4 m-auto sm:py-10">
       <div
-        class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 lg:grid-cols-12 lg:gap-8 lg:px-8"
+        class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 lg:grid-cols-12 lg:gap-8 lg:px-8 items-center"
       >
         <div
           class="max-w-xl text-3xl font-bold tracking-tight mx-auto text-white sm:text-4xl lg:col-span-7"
         >
           <h2 class="inline sm:block lg:inline xl:block">
-            Get in touch, give us ur email
+            Ready to start a conversation? Get in touch with us.
           </h2>
         </div>
         <form class="w-full mx-auto max-w-md lg:col-span-5 lg:pt-2">
