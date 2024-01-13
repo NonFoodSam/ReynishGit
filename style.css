@@ -12,6 +12,10 @@ body {
             100% {
                 opacity: 1; */
 }
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
   
 /* mobile */
   @media (max-width: 800px) {
