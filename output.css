@@ -2062,6 +2062,10 @@ video {
   line-height: 3.5rem;
 }
 
+.leading-\[0\.2\] {
+  line-height: 0.2;
+}
+
 .tracking-tight {
   letter-spacing: -0.025em;
 }
