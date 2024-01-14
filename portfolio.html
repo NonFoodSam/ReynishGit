@@ -144,96 +144,30 @@
         </div>
       </header>
     </div>
-    <div class="relative isolate overflow-hidden bg-gray-900 py-44 sm:py-50">
-      <img
-        src="img/JW-side-07.png"
-        alt=""
-        class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center brightness-50"
-      />
-      <div
-        class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
-        aria-hidden="true"
-      >
-        <div
-          class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#6246ff] to-[#6fa9ff] opacity-5"
-          style="
-            clip-path: polygon(
-              74.1% 44.1%,
-              100% 61.6%,
-              97.5% 26.9%,
-              85.5% 0.1%,
-              80.7% 2%,
-              72.5% 32.5%,
-              60.2% 62.4%,
-              52.4% 68.1%,
-              47.5% 58.3%,
-              45.2% 34.5%,
-              27.5% 76.7%,
-              0.1% 64.9%,
-              17.9% 100%,
-              27.6% 76.8%,
-              76.1% 97.7%,
-              74.1% 44.1%
-            );
-          "
-        ></div>
-      </div>
-      <div
-        class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
-        aria-hidden="true"
-      >
-        <div
-          class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#4649ff] to-[#956fff] opacity-5"
-          style="
-            clip-path: polygon(
-              74.1% 44.1%,
-              100% 61.6%,
-              97.5% 26.9%,
-              85.5% 0.1%,
-              80.7% 2%,
-              72.5% 32.5%,
-              60.2% 62.4%,
-              52.4% 68.1%,
-              47.5% 58.3%,
-              45.2% 34.5%,
-              27.5% 76.7%,
-              0.1% 64.9%,
-              17.9% 100%,
-              27.6% 76.8%,
-              76.1% 97.7%,
-              74.1% 44.1%
-            );
-          "
-        ></div>
-      </div>
+    <div class="bg-transparent pb-0 pt-24 sm:pt-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:mx-0">
-          <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-            Portfolio
+          <p class="text-base font-semibold leading-7 text-amber-600">
+            Recent work
+          </p>
+          <h2
+            class="mt-2 text-4xl font-bold tracking-tight text-white sm:text-6xl"
+          >
+            Recent Client Projects
           </h2>
           <p class="mt-6 text-lg leading-8 text-gray-300">
-            Ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit
-            sunt amet fugiat veniam occaecat fugiat aliqua anim aute id magna
-            aliqua.
+            Below are a few of my recent client projects, feel free to look
+            through and send any comments or questions through to me on the
+            Contact page.
           </p>
         </div>
       </div>
     </div>
-    <div class="bg-transparent py-24 sm:py-24">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl text-center">
-          <h2
-            class="text-3xl inline-block font-bold tracking-tight text-transparent sm:text-4xl bg-gradient-to-br from-white to-gray-200 bg-clip-text"
-          >
-            Recent Work
-          </h2>
 
-          <p class="mt-2 text-lg leading-8 text-gray-300">
-            Look at below examples of some of my recent work.
-          </p>
-        </div>
+    <div class="bg-transparent py-5 sm:py-5">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div
-          class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 fade-in opacity-0 transition-opacity"
         >
           <article class="flex flex-col items-start justify-between">
             <a href="#">
@@ -396,5 +330,27 @@
         </div>
       </div>
     </div>
+    <script>
+      // Function to handle intersection changes
+      function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      }
+
+      // Set up the Intersection Observer with a lower threshold for mobile
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: null, // use the viewport as the root
+        threshold: 0.05, // trigger when 10% of the element is visible
+      });
+
+      // Target elements with the 'fade-in' class
+      document.querySelectorAll(".fade-in").forEach((element) => {
+        observer.observe(element);
+      });
+    </script>
   </body>
 </html>
