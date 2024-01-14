@@ -11,6 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script
       defer
@@ -118,17 +124,17 @@
                 <div class="space-y-2 py-6">
                   <a
                     href="portfolio.html"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800/30"
                     >Portfolio</a
                   >
                   <a
                     href="contact.html"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800/30"
                     >Contact</a
                   >
                   <a
                     href="book.html"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800/30"
                     >Book Online</a
                   >
                 </div>
@@ -175,7 +181,7 @@
       >
         <div class="mb-1 flex justify-center">
           <div
-            class="hover:animate-none relative rounded-full px-3 py-1 text-[0.7rem] text-gray-300 hover:ring-white/20 font-bold tracking-widest"
+            class="relative px-3 py-1 text-[0.7rem] text-gray-300 font-bold tracking-widest"
           >
             <a>Reynish Audio</a>
           </div>
@@ -183,7 +189,7 @@
 
         <div class="text-center">
           <h1
-            class="text-[2rem] leading-[2.4rem] md:leading-[3.2rem] font-['Montserrat', sans-serif;] text-white md:text-[4rem] font-extralight tracking-tighter"
+            class="text-[2.05rem] leading-[2.4rem] md:leading-[3.2rem] text-white md:text-[4rem] font-light tracking-tighter"
           >
             Creating Harmony,
             <br class="leading-[1.2]" />
@@ -258,16 +264,19 @@
         </svg>
       </button>
     </div>
-    <div class="hidden sm:inline">
+    <div class="hidden sm:flex items-center">
       <div
         class="absolute animate-pulse -bottom-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
       >
-        <button id="scrollButton" class="text-white font-normal py-3 px-3">
+        <button
+          id="scrollButton"
+          class="text-white font-normal py-3 px-3 flex justify-center align-middle"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            class="w-8 h-8"
+            class="w-8 h-8 ml-[0.3rem]"
           >
             <path
               fill-rule="evenodd"
@@ -276,10 +285,12 @@
             />
           </svg>
         </button>
-        <!-- <p class="text-white text-center font-light text-xs -mt-2">Scroll down</p> -->
+        <p class="text-white text-center font-light text-xs -mt-2">
+          Scroll down
+        </p>
       </div>
     </div>
-    <div class="bg-transparent pt-20 pb-14 sm:pt-20">
+    <div class="bg-transparent pt-20 pb-14 sm:pt-20" id="targetDiv">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:text-center">
           <h2 class="text-base font-semibold leading-7 text-amber-600">
@@ -582,7 +593,7 @@
     /> -->
 
     <div
-      class="flex flex-col items-center justify-center align-middle mt-10 mb-20 pt-10 bg-gradient-to-br from-slate-600/5"
+      class="flex flex-col items-center justify-center align-middle mt-10 mb-20 pt-12 bg-gray-950/20"
     >
       <div class="flex gap-x-1 text-white">
         <svg
@@ -647,7 +658,7 @@
           4
         </svg>
       </div>
-      <div class="flex flex-col w-[65%] sm:w-[45%] justify-center items-center">
+      <div class="flex flex-col w-[65%] sm:w-[58%] justify-center items-center">
         <p class="font-light text-center text-2xl text-white mt-5">
           Jordan was highly knowledgeable and easy to work with. He listened to
           my ideas and understood what was required in order to bring them to
