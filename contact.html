@@ -468,12 +468,12 @@
             </div>
         </div>
         <div class="mt-8 flex justify-end">
-          <button
-            type="submit"
-            class="rounded-md bg-[#b86f34] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#d68645] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b86f34]"
-          >
-            <span id="buttonText">Send message</span>
-          </button>
+            <button
+                type="submit"
+                class="rounded-md bg-[#b86f34] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-[#d68645] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b86f34]"
+            >
+                Send message
+            </button>
         </div>
     </div>
 </form>
@@ -494,35 +494,10 @@
                   method: "POST",
                   body: formData,
               }).then(response => {
-                  // Optionally, handle the response here
-  
-                  // Display alert after form submission
-                  alert("Form has been submitted!");
               });
+              alert("Your message has been sent!");
           });
       });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.0"></script>
-  <script>
-    // Function to submit the form and trigger confetti
-    function submitFormWithConfetti() {
-      // Your existing form submission logic
-      const form = document.getElementById("contactFormReynish");
-      const formData = new FormData(form);
-  
-      fetch(form.action, {
-        method: "POST",
-        body: formData,
-      }).then(response => {
-        // Optionally, handle the response here
-        // Trigger confetti when the form is submitted
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.6 },
-        });
-      });
-    }
   </script>
   </body>
 </html>

@@ -1,35 +1,35 @@
-let isHourly = true;
-let hourElement = document.getElementById("Hourly");
-hourElement.addEventListener("change", function () {
-  isHourly = true;
-  hourElement.classList.add("bg-indigo-600");
-  dailyElement.classList.remove("bg-indigo-600");
-});
-let dailyElement = document.getElementById("Daily");
-dailyElement.addEventListener("change", function () {
-  isHourly = false;
-  hourElement.classList.remove("bg-indigo-600");
-  dailyElement.classList.add("bg-indigo-600");
-});
+// let isHourly = true;
+// let hourElement = document.getElementById("Hourly");
+// hourElement.addEventListener("change", function () {
+//   isHourly = true;
+//   hourElement.classList.add("bg-indigo-600");
+//   dailyElement.classList.remove("bg-indigo-600");
+// });
+// let dailyElement = document.getElementById("Daily");
+// dailyElement.addEventListener("change", function () {
+//   isHourly = false;
+//   hourElement.classList.remove("bg-indigo-600");
+//   dailyElement.classList.add("bg-indigo-600");
+// });
 
-document.addEventListener('scroll', function () {
-  var header = document.querySelector('header');
-  var scrollPosition = window.scrollY;
+// document.addEventListener('scroll', function () {
+//   var header = document.querySelector('header');
+//   var scrollPosition = window.scrollY;
 
-  if (scrollPosition > 50) { // Adjust the scroll position threshold as needed
-    header.classList.remove('nav-bg-initial');
-    header.classList.add('nav-bg-scrolled');
-  } else {
-    header.classList.remove('nav-bg-scrolled');
-    header.classList.add('nav-bg-initial');
-  }
-});
+//   if (scrollPosition > 50) { // Adjust the scroll position threshold as needed
+//     header.classList.remove('nav-bg-initial');
+//     header.classList.add('nav-bg-scrolled');
+//   } else {
+//     header.classList.remove('nav-bg-scrolled');
+//     header.classList.add('nav-bg-initial');
+//   }
+// });
 
-document.getElementById('scrollButton').addEventListener('click', function() {
-  // Scroll smoothly to the halfway point of the page
-  window.scroll({
-      top: document.documentElement.scrollHeight / 2,
-      behavior: 'smooth'
-  });
-});
+// document.getElementById('scrollButton').addEventListener('click', function() {
+//   // Scroll smoothly to the halfway point of the page
+//   window.scroll({
+//       top: document.documentElement.scrollHeight / 2,
+//       behavior: 'smooth'
+//   });
+// });
 
