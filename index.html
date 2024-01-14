@@ -290,7 +290,10 @@
         </p>
       </div>
     </div>
-    <div class="bg-transparent pt-20 pb-14 sm:pt-20" id="targetDiv">
+    <div
+      class="bg-transparent pt-20 pb-14 sm:pt-20 fade-in opacity-0 transition-opacity duration-500"
+      id="targetDiv"
+    >
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:text-center">
           <h2 class="text-base font-semibold leading-7 text-amber-600">
@@ -593,7 +596,7 @@
     /> -->
 
     <div
-      class="flex flex-col items-center justify-center align-middle mt-10 mb-20 pt-12 bg-gray-950/20"
+      class="flex flex-col items-center justify-center align-middle mt-10 mb-20 pt-12 bg-gray-950/20 fade-in opacity-0 transition-opacity duration-500"
     >
       <div class="flex gap-x-1 text-white">
         <svg
@@ -1146,7 +1149,9 @@
       --
     /> -->
 
-    <div class="bg-transparent pb-12 sm:py-4">
+    <div
+      class="bg-transparent pb-12 sm:py-4 fade-in opacity-0 transition-opacity duration-500"
+    >
       <div class="relative isolate">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div
@@ -1305,7 +1310,9 @@
       class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100"
       --
     />
-    <div class="bg-transparent py-4 m-auto sm:py-10">
+    <div
+      class="bg-transparent py-4 m-auto sm:py-10 fade-in opacity-0 transition-opacity duration-500"
+    >
       <div
         class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 lg:grid-cols-12 lg:gap-8 lg:px-8 items-center"
       >
@@ -1341,6 +1348,28 @@
     <hr
       class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100"
     />
+    <script>
+      // Function to handle intersection changes
+      function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      }
+
+      // Set up the Intersection Observer
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: null, // use the viewport as the root
+        threshold: 0.5, // trigger when 50% of the element is visible
+      });
+
+      // Target elements with the 'fade-in' class
+      document.querySelectorAll(".fade-in").forEach((element) => {
+        observer.observe(element);
+      });
+    </script>
     <script>
       document
         .getElementById("scrollButton")
