@@ -367,7 +367,7 @@
           </div>
         </div>
         <form
-          action="contact.html"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSe1ZVWeZ62apI3xUyV0rpoj_LoJyqG7xeigPa7YTvwdBMHcig/viewform?usp=sf_link"
           method="POST"
           class="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
         >
@@ -437,6 +437,25 @@
                   />
                 </div>
               </div>
+              <div>
+                <label class="block text-sm font-medium text-white leading-6">Interested In:</label>
+                <div class="space-y-2 mt-2.5 text-white">
+                    <div class="flex items-center">
+                      <input type="checkbox" id="recording" name="interests[]" value="recording" class="mr-2 checkbox-orange">
+                      <label for="recording">Recording</label>
+                      
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="mixing" name="interests[]" value="mixing" class="mr-2">
+                        <label for="mixing">Mixing</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="mastering" name="interests[]" value="mastering" class="mr-2">
+                        <label for="mastering">Mastering</label>
+                    </div>
+                </div>
+            </div>
+            
               <div class="sm:col-span-2">
                 <label
                   for="message"
@@ -448,11 +467,12 @@
                     name="message"
                     id="message"
                     rows="4"
-                    class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-[#b86f34] sm:text-sm sm:leading-6"
+                    class="block w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
                   ></textarea>
                 </div>
               </div>
             </div>
+            
             <div class="mt-8 flex justify-end">
               <button
                 type="submit"
@@ -465,5 +485,6 @@
         </form>
       </div>
     </div>
+    
   </body>
 </html>

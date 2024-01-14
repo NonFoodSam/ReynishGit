@@ -46,3 +46,7 @@ body {
     max-width: 100%;
   }
 
+  #recording:checked {
+    background-color: #FFA500; /* Orange background color when checked */
+    border-color: #FFA500; /* Matching border color */
+}
