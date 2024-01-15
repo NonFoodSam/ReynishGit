@@ -1007,6 +1007,10 @@ video {
   height: 370px;
 }
 
+.h-\[390px\] {
+  height: 390px;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -2638,6 +2642,10 @@ video {
 
   .md\:h-\[340px\] {
     height: 340px;
+  }
+
+  .md\:h-\[540px\] {
+    height: 540px;
   }
 
   .md\:object-center {
