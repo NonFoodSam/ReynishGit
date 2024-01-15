@@ -370,11 +370,14 @@
         });
   
         // Close the popup when clicking outside the box
-        window.addEventListener("click", function (event) {
+        window.addEventListener("click", closePopup);
+        window.addEventListener("touchstart", closePopup);
+  
+        function closePopup(event) {
           if (event.target === popup) {
             popup.classList.add("hidden");
           }
-        });
+        }
       });
     </script>
   <hr
