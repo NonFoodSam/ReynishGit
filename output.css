@@ -1080,6 +1080,10 @@ video {
   width: 95%;
 }
 
+.w-\[92\%\] {
+  width: 92%;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
@@ -2088,6 +2092,14 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[2rem\] {
+  font-size: 2rem;
+}
+
+.text-\[1\.8rem\] {
+  font-size: 1.8rem;
 }
 
 .font-bold {
