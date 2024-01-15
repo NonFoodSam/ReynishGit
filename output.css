@@ -2636,6 +2636,10 @@ video {
     height: 250px;
   }
 
+  .md\:h-\[340px\] {
+    height: 340px;
+  }
+
   .md\:object-center {
     -o-object-position: center;
        object-position: center;
