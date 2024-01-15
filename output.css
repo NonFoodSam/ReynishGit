@@ -984,6 +984,10 @@ video {
   height: 100vh;
 }
 
+.h-\[1\.1rem\] {
+  height: 1.1rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -1062,6 +1066,18 @@ video {
 
 .w-1\/2 {
   width: 50%;
+}
+
+.w-\[100\%\] {
+  width: 100%;
+}
+
+.w-\[90\%\] {
+  width: 90%;
+}
+
+.w-\[95\%\] {
+  width: 95%;
 }
 
 .min-w-0 {
@@ -1568,6 +1584,36 @@ video {
 
 .bg-gray-500\/10 {
   background-color: rgb(107 114 128 / 0.1);
+}
+
+.bg-amber-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 211 77 / var(--tw-bg-opacity));
+}
+
+.bg-amber-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 191 36 / var(--tw-bg-opacity));
+}
+
+.bg-amber-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(180 83 9 / var(--tw-bg-opacity));
+}
+
+.bg-amber-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(146 64 14 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(133 77 14 / var(--tw-bg-opacity));
+}
+
+.bg-yellow-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(161 98 7 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
@@ -2492,6 +2538,14 @@ video {
 
   .sm\:aspect-\[2\/1\] {
     aspect-ratio: 2/1;
+  }
+
+  .sm\:h-6 {
+    height: 1.5rem;
+  }
+
+  .sm\:h-5 {
+    height: 1.25rem;
   }
 
   .sm\:w-96 {
