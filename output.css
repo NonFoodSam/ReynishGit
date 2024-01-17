@@ -1001,6 +1001,10 @@ video {
   width: 100%;
 }
 
+.w-0 {
+  width: 0px;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1278,6 +1282,10 @@ video {
   border-width: 1px;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-l-2 {
   border-left-width: 2px;
 }
@@ -1293,6 +1301,11 @@ video {
 
 .border-gray-600\/20 {
   border-color: rgb(75 85 99 / 0.2);
+}
+
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
 .bg-\[\#141414\] {

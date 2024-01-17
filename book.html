@@ -231,7 +231,7 @@
 </div> -->
 
     <div class="bg-[#181818] py-12 sm:py-1">
-      <div class="mx-auto max-w-7xl pb-32 pt-20 px-6 lg:px-8">
+      <div class="mx-auto max-w-7xl pb-10 pt-20 px-6 lg:px-8">
         <div class="mx-auto max-w-4xl text-center">
           <h2 class="text-base font-semibold leading-7 text-[#bd763c]">
             Pricing
@@ -251,23 +251,28 @@
         <div class="mt-16 flex justify-center">
           <fieldset
             class="grid grid-cols-3 gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-gray-200"
+            id="frequencySwitch"
           >
             <legend class="sr-only">Payment frequency</legend>
-            <!-- Checked: "bg-indigo-600 text-white", Not Checked: "text-gray-500" -->
             <label
-              class="cursor-pointer rounded-full px-2.5 py-1 bg-[#b86f33] text-white"
+              class="cursor-pointer rounded-full px-2.5 py-1 text-gray-300"
+              onclick="selectOption(0)"
             >
               <input
                 type="radio"
                 name="frequency"
                 value="recording"
                 class="sr-only"
+                checked
               />
-              <span>Recording</span>
+              <span
+                class="transition-all duration-300 ease-in-out transform hover:scale-105"
+                >Recording</span
+              >
             </label>
-            <!-- Checked: "bg-indigo-600 text-white", Not Checked: "text-gray-500" -->
             <label
               class="cursor-pointer rounded-full px-2.5 py-1 text-gray-300"
+              onclick="selectOption(1)"
             >
               <input
                 type="radio"
@@ -275,10 +280,14 @@
                 value="mixing"
                 class="sr-only"
               />
-              <span>Mixing</span>
+              <span
+                class="transition-all duration-300 ease-in-out transform hover:scale-105"
+                >Mixing</span
+              >
             </label>
             <label
               class="cursor-pointer rounded-full px-2.5 py-1 text-gray-300"
+              onclick="selectOption(2)"
             >
               <input
                 type="radio"
@@ -286,10 +295,37 @@
                 value="bundle"
                 class="sr-only"
               />
-              <span>Bundle</span>
+              <span
+                class="transition-all duration-300 ease-in-out transform hover:scale-105"
+                >Bundle</span
+              >
             </label>
           </fieldset>
         </div>
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            const labels = document.querySelectorAll("#frequencySwitch label");
+            labels.forEach((label, index) => {
+              const radioInput = label.querySelector("input[type=radio]");
+              if (radioInput.checked) {
+                label.classList.add("bg-[#b86f33]", "text-white");
+              }
+            });
+          });
+
+          function selectOption(index) {
+            const labels = document.querySelectorAll("#frequencySwitch label");
+            labels.forEach((label, i) => {
+              if (i === index) {
+                label.classList.add("bg-[#b86f33]", "text-white");
+              } else {
+                label.classList.remove("bg-[#b86f33]", "text-white");
+              }
+            });
+          }
+        </script>
+
         <div
           class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3"
         >
@@ -359,6 +395,85 @@
                   break;
                 case "3":
                   priceElement.innerText = "$150";
+                  frequencyElement.innerText = "/week";
+                  break;
+                default:
+                  break;
+              }
+            }
+          </script>
+        </div>
+
+        <div
+          class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          x-show="selectedOption === 'mixing'"
+        >
+          <div class="rounded-3xl p-8 ring-1 xl:p-10 ring-gray-200">
+            <h3
+              id="tier-mixing"
+              class="text-lg font-semibold leading-8 text-white"
+            >
+              Mixing
+            </h3>
+            <p class="mt-4 text-sm leading-6 text-gray-200">
+              Enhance the sound and balance of your audio tracks.
+            </p>
+            <p class="mt-6 flex items-baseline gap-x-1">
+              <!-- Price, update based on frequency toggle state -->
+              <span
+                id="mixingPrice"
+                class="text-4xl font-bold tracking-tight text-white"
+                >$30</span
+              >
+              <!-- Payment frequency, update based on frequency toggle state -->
+              <span
+                id="mixingFrequency"
+                class="text-sm font-semibold leading-6 text-gray-200"
+                >/session</span
+              >
+            </p>
+
+            <input
+              type="range"
+              id="mixingFrequencySlider"
+              min="1"
+              max="3"
+              step="1"
+              value="1"
+              class="mt-4 w-full"
+              oninput="updateMixingPrice(this.value)"
+            />
+
+            <ul
+              role="list"
+              class="mt-8 space-y-3 text-sm leading-6 xl:mt-10 text-gray-200"
+            >
+              <!-- ... Your list items remain unchanged ... -->
+            </ul>
+            <a
+              href="#"
+              aria-describedby="tier-mixing"
+              class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-[#935727] text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-[#935727]"
+              >Buy plan</a
+            >
+          </div>
+
+          <script>
+            function updateMixingPrice(sliderValue) {
+              let priceElement = document.getElementById("mixingPrice");
+              let frequencyElement = document.getElementById("mixingFrequency");
+
+              switch (sliderValue) {
+                case "1":
+                  priceElement.innerText = "$30";
+                  frequencyElement.innerText = "/session";
+                  break;
+                case "2":
+                  priceElement.innerText = "$100";
+                  frequencyElement.innerText = "/day";
+                  break;
+                case "3":
+                  priceElement.innerText = "$300";
                   frequencyElement.innerText = "/week";
                   break;
                 default:
