@@ -345,54 +345,79 @@
   </div>
 
   <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          // Show the Recording box on page load
-          showBox('recording');
-
-          const labels = document.querySelectorAll("#frequencySwitch label");
-
-          labels.forEach((label, index) => {
-              const radioInput = label.querySelector("input[type=radio]");
-              if (radioInput.checked) {
-                  label.classList.add("bg-[#b86f33]", "text-white");
-              }
-          });
+    document.addEventListener("DOMContentLoaded", function () {
+      // Show the Recording box on page load
+      showBox('recording');
+  
+      const labels = document.querySelectorAll("#frequencySwitch label");
+  
+      labels.forEach((label, index) => {
+        const radioInput = label.querySelector("input[type=radio]");
+        if (radioInput.checked) {
+          label.classList.add("bg-[#b86f33]", "text-white");
+        }
       });
-
-      function showBox(option) {
-          // Hide all boxes
-          document.getElementById('recordingBox').style.display = 'none';
-          document.getElementById('mixingBox').style.display = 'none';
-          document.getElementById('bundleBox').style.display = 'none';
-
-          // Show the selected box
-          document.getElementById(`${option}Box`).style.display = 'block';
-
-          // Update styles for the selected option in the toggle
-          const labels = document.querySelectorAll("#frequencySwitch label");
-          labels.forEach((label) => {
-              label.classList.remove("bg-[#b86f33]", "text-white");
-          });
-
-          const selectedLabel = document.querySelector(`#frequencySwitch [value='${option}']`).parentNode;
-          selectedLabel.classList.add("bg-[#b86f33]", "text-white");
-      }
-
-      function updatePrice(sliderValue) {
-          // Your existing updatePrice function
-          // ...
-      }
-
-      function updateMixingPrice(sliderValue) {
-          // Your existing updateMixingPrice function
-          // ...
-      }
-
-      function updateBundlePrice(sliderValue) {
-          // Your existing updateBundlePrice function
-          // ...
-      }
+    });
+  
+    function showBox(option) {
+      // Hide all boxes
+      document.getElementById('recordingBox').style.display = 'none';
+      document.getElementById('mixingBox').style.display = 'none';
+      document.getElementById('bundleBox').style.display = 'none';
+  
+      // Show the selected box
+      document.getElementById(`${option}Box`).style.display = 'block';
+  
+      // Update styles for the selected option in the toggle
+      const labels = document.querySelectorAll("#frequencySwitch label");
+      labels.forEach((label) => {
+        label.classList.remove("bg-[#b86f33]", "text-white");
+      });
+  
+      const selectedLabel = document.querySelector(`#frequencySwitch [value='${option}']`).parentNode;
+      selectedLabel.classList.add("bg-[#b86f33]", "text-white");
+    }
+  
+    function updatePrice(sliderValue) {
+      // Get the corresponding elements
+      const priceElement = document.getElementById('price');
+      const frequencyElement = document.getElementById('frequency');
+  
+      // Update price based on the slider value
+      let price = 15 + (sliderValue - 1) * 10;
+      priceElement.textContent = `$${price}`;
+  
+      // Update frequency based on the slider value
+      frequencyElement.textContent = '/month';
+    }
+  
+    function updateMixingPrice(sliderValue) {
+      // Get the corresponding elements
+      const mixingPriceElement = document.getElementById('mixingPrice');
+      const mixingFrequencyElement = document.getElementById('mixingFrequency');
+  
+      // Update price based on the slider value
+      let price = 30 + (sliderValue - 1) * 10;
+      mixingPriceElement.textContent = `$${price}`;
+  
+      // Update frequency based on the slider value
+      mixingFrequencyElement.textContent = '/session';
+    }
+  
+    function updateBundlePrice(sliderValue) {
+      // Get the corresponding elements
+      const bundlePriceElement = document.getElementById('bundlePrice');
+      const bundleFrequencyElement = document.getElementById('bundleFrequency');
+  
+      // Update price based on the slider value
+      let price = 50 + (sliderValue - 1) * 10;
+      bundlePriceElement.textContent = `$${price}`;
+  
+      // Update frequency based on the slider value
+      bundleFrequencyElement.textContent = '/month';
+    }
   </script>
+  
 </div>
 
     </div>
