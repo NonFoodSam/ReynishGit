@@ -164,9 +164,9 @@
       </div>
     </div>
     <!-- Toggle -->
-    <div class="bg-transparent py-5 sm:py-5">
-      <!-- Add a dropdown menu for Recording/Mixing -->
-      <div class="flex justify-center mb-4">
+    <!-- <div class="bg-transparent py-5 sm:py-5"> -->
+    <!-- Add a dropdown menu for Recording/Mixing -->
+    <!-- <div class="flex justify-center mb-4">
         <label class="flex items-center bg-amber-600 px-3 py-1.5 rounded-full mt-5">
           <span class="mr-2 text-white font-bold text-sm ">Filter by:</span>
           <select id="selectFilter" class="text-white text-center text-sm bg-transparent cursor-pointer">
@@ -175,36 +175,39 @@
             <option value="2">Mixing</option>
           </select>
         </label>
-      </div>
-      <!-- Toggle -->
-      <!-- script -->
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const selectFilter = document.getElementById('selectFilter');
-          const articles = document.querySelectorAll('.grid article');
-      
-          selectFilter.addEventListener('change', function () {
-            const idToShow = selectFilter.value;
-      
-            articles.forEach((article) => {
-              const articleId = article.getAttribute('data-article-id');
-      
-              if (articleId === idToShow || idToShow === '0') {
-                article.style.display = 'flex';
-              } else {
-                article.style.display = 'none';
-              }
-            });
+      </div> -->
+    <!-- Toggle -->
+    <!-- script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const selectFilter = document.getElementById("selectFilter");
+        const articles = document.querySelectorAll(".grid article");
+
+        selectFilter.addEventListener("change", function () {
+          const idToShow = selectFilter.value;
+
+          articles.forEach((article) => {
+            const articleId = article.getAttribute("data-article-id");
+
+            if (articleId === idToShow || idToShow === "0") {
+              article.style.display = "flex";
+            } else {
+              article.style.display = "none";
+            }
           });
         });
-      </script>
-      <!-- Script -->
+      });
+    </script>
+    <!-- Script -->
     <div class="bg-transparent py-5 sm:py-5">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div
           class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
         >
-          <article class="flex flex-col items-start justify-between" data-article-id="2">
+          <article
+            class="flex flex-col items-start justify-between"
+            data-article-id="2"
+          >
             <a href="Parallel-Rooms.html">
               <div class="relative w-full">
                 <img
@@ -257,7 +260,10 @@
             </div>
           </article>
 
-          <article class="flex flex-col items-start justify-between" data-article-id="1">
+          <article
+            class="flex flex-col items-start justify-between"
+            data-article-id="1"
+          >
             <a href="#">
               <div class="relative w-full">
                 <img
@@ -309,7 +315,10 @@
               </div>
             </div>
           </article>
-          <article class="flex flex-col items-start justify-between" data-article-id="2">
+          <article
+            class="flex flex-col items-start justify-between"
+            data-article-id="2"
+          >
             <a href="#">
               <div class="relative w-full">
                 <img
