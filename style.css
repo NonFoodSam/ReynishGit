@@ -39,6 +39,8 @@ body {
 
 #frequencySlider {
   height: 0.2rem; /* Adjust the height to make the track thinner */
+  appearance: none; /* Disable default styles */
+  -webkit-appearance: none; /* Disable default styles for WebKit browsers */
 }
 
 #frequencySlider::-webkit-slider-thumb {
@@ -56,6 +58,7 @@ body {
   border: 2px solid #fff;
   border-radius: 50%;
 }
+
   
 /* mobile */
   @media (max-width: 800px) {
