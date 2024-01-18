@@ -13,6 +13,30 @@ body {
                 opacity: 1; */
 }
 
+#frequencySlider {
+  height: 0.2rem; /* Adjust the height to make the track thinner */
+  appearance: none; /* Disable default styles */
+  -webkit-appearance: none; /* Disable default styles for WebKit browsers */
+}
+
+#frequencySlider::-webkit-slider-thumb {
+  height: 1.5rem; /* Adjust the height as needed */
+  width: 1.5rem;  /* Adjust the width as needed */
+  background-color: #bd763c !important; /* Your desired background color */
+  border: 2px solid #fff; /* Optional: Add border for better visibility */
+  border-radius: 50%; /* Make it round */
+  -webkit-appearance: none !important; /* Disable default styles for WebKit browsers */
+  appearance: none !important;
+}
+
+#frequencySlider::-moz-range-thumb {
+  height: 2rem;
+  width: 2rem;
+  background-color: #171717;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
 .nav-bg-initial {
   background: linear-gradient(to bottom, #202020, /* your initial background color */);
 }
@@ -37,27 +61,6 @@ body {
   margin: 0;
 }
 
-#frequencySlider {
-  height: 0.2rem; /* Adjust the height to make the track thinner */
-  appearance: none; /* Disable default styles */
-  -webkit-appearance: none; /* Disable default styles for WebKit browsers */
-}
-
-#frequencySlider::-webkit-slider-thumb {
-  height: 1.5rem; /* Adjust the height as needed */
-  width: 1.5rem;  /* Adjust the width as needed */
-  background-color: #bd763c; /* Your desired background color */
-  border: 2px solid #fff; /* Optional: Add border for better visibility */
-  border-radius: 50%; /* Make it round */
-}
-
-#frequencySlider::-moz-range-thumb {
-  height: 2rem;
-  width: 2rem;
-  background-color: #171717;
-  border: 2px solid #fff;
-  border-radius: 50%;
-}
 
   
 /* mobile */
@@ -71,10 +74,10 @@ body {
     max-width: 100%;
   }
 
-  /* #recording:checked {
+  #recording:checked {
     background-color: #FFA500;
     border-color: #FFA500;
-} */
+}
 
 #navbar {
   transition: background-color 0.3s ease-in-out;
