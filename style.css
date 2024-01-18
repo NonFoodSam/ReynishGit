@@ -14,23 +14,35 @@ body {
 }
 
 #frequencySlider {
-  height: 0.2rem; /* Adjust the height to make the track thinner */
-  appearance: none; /* Disable default styles */
-  -webkit-appearance: none; /* Disable default styles for WebKit browsers */
+  height: 2rem; /* Adjust the overall height for better visibility */
+  appearance: none;
+  background: transparent;
+
+  /* Vendor prefixes for different browsers */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-#frequencySlider::-webkit-slider-thumb,
-#frequencySlider::-moz-range-thumb,
-#frequencySlider::-ms-thumb {
-  height: 1.5rem; /* Adjust the height as needed */
-  width: 1.5rem;  /* Adjust the width as needed */
-  background-color: #bd763c !important; /* Your desired background color */
-  border: 2px solid #fff; /* Optional: Add border for better visibility */
-  border-radius: 50%; /* Make it round */
-  -webkit-appearance: none !important; /* Disable default styles for WebKit browsers */
-  appearance: none !important;
+/* Styling for the slider thumb in WebKit browsers (Chrome, Safari) */
+#frequencySlider::-webkit-slider-thumb {
+  height: 2rem;
+  width: 2rem;
+  background-color: #171717;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  margin-top: -1rem; /* Adjust to center the thumb vertically */
 }
 
+/* Styling for the track in WebKit browsers */
+#frequencySlider::-webkit-slider-runnable-track {
+  height: 0.2rem;
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 0.1rem; /* Adjust for rounded edges */
+}
+
+/* Styling for the slider thumb in Firefox */
 #frequencySlider::-moz-range-thumb {
   height: 2rem;
   width: 2rem;
@@ -38,6 +50,38 @@ body {
   border: 2px solid #fff;
   border-radius: 50%;
 }
+
+/* Styling for the track in Firefox */
+#frequencySlider::-moz-range-track {
+  height: 0.2rem;
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 0.1rem; /* Adjust for rounded edges */
+}
+
+/* Styling for the slider thumb in IE/Edge */
+#frequencySlider::-ms-thumb {
+  height: 2rem;
+  width: 2rem;
+  background-color: #171717;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  -ms-appearance: none;
+  margin-top: -1rem; /* Adjust to center the thumb vertically */
+}
+
+/* Styling for the track in IE/Edge */
+#frequencySlider::-ms-track {
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 0.1rem; /* Adjust for rounded edges */
+}
+
+/* Additional styling for the track in IE/Edge when thumb is not pressed */
+#frequencySlider::-ms-fill-lower,
+#frequencySlider::-ms-fill-upper {
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 0.1rem; /* Adjust for rounded edges */
+}
+
 
 .nav-bg-initial {
   background: linear-gradient(to bottom, #202020, /* your initial background color */);
