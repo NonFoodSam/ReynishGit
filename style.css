@@ -19,7 +19,9 @@ body {
   -webkit-appearance: none; /* Disable default styles for WebKit browsers */
 }
 
-#frequencySlider::-webkit-slider-thumb {
+#frequencySlider::-webkit-slider-thumb,
+#frequencySlider::-moz-range-thumb,
+#frequencySlider::-ms-thumb {
   height: 1.5rem; /* Adjust the height as needed */
   width: 1.5rem;  /* Adjust the width as needed */
   background-color: #bd763c !important; /* Your desired background color */
