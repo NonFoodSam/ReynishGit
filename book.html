@@ -273,7 +273,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       // Show the Recording box on page load
-      showBox('recording');
+      showBox(getSelectedOption() || 'recording');
   
       const labels = document.querySelectorAll("#frequencySwitch label");
   
@@ -282,14 +282,18 @@
         label.classList.remove("bg-[#b86f33]", "text-white");
       });
   
-      // Find and highlight the currently checked option
-      const checkedLabel = document.querySelector("#frequencySwitch input[type=radio]:checked").parentNode;
+      // Find and highlight the currently stored option
+      const storedOption = getSelectedOption();
+      const checkedLabel = document.querySelector(`#frequencySwitch [value='${storedOption}']`).parentNode;
       if (checkedLabel) {
         checkedLabel.classList.add("bg-[#b86f33]", "text-white");
       }
     });
   
     function showBox(option) {
+      // Save the selected option in local storage
+      setSelectedOption(option);
+  
       // Hide all boxes
       document.getElementById('recordingBox').style.display = 'none';
       document.getElementById('mixingBox').style.display = 'none';
@@ -345,6 +349,14 @@
   
       // Update frequency based on the slider value
       bundleFrequencyElement.textContent = '/month';
+    }
+  
+    function getSelectedOption() {
+      return localStorage.getItem('selectedOption');
+    }
+  
+    function setSelectedOption(option) {
+      localStorage.setItem('selectedOption', option);
     }
   </script>
   
