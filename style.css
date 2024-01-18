@@ -71,10 +71,10 @@ body {
     max-width: 100%;
   }
 
-  #recording:checked {
-    background-color: #FFA500; /* Orange background color when checked */
-    border-color: #FFA500; /* Matching border color */
-}
+  /* #recording:checked {
+    background-color: #FFA500;
+    border-color: #FFA500;
+} */
 
 #navbar {
   transition: background-color 0.3s ease-in-out;
