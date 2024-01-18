@@ -187,7 +187,7 @@
   </div>
 
   <!-- Box for Recording -->
-  <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3" id="recordingBox">
+  <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-auto lg:max-w-[35rem] lg:grid-cols-3" id="recordingBox">
       <div class="rounded-3xl p-8 ring-1 xl:p-10 ring-gray-200">
           <h3 id="tier-recording" class="text-lg font-semibold leading-8 text-white">
               Recording
@@ -202,8 +202,10 @@
               <span id="frequency" class="text-sm font-semibold leading-6 text-gray-200">/month</span>
           </p>
 
-          <input type="range" id="frequencySlider" min="1" max="3" step="1" value="1"
-              class="mt-4 w-full" oninput="updatePrice(this.value)" />
+          <input type="range" id="frequencySlider" min="1" max="3" step="0.1" value="1"
+          class="mt-9 w-full appearance-none cursor-pointer"
+          oninput="updatePrice(this.value)" />
+      
 
           <ul role="list" class="mt-8 space-y-3 text-sm leading-6 xl:mt-10 text-gray-200">
               <!-- ... Your list items remain unchanged ... -->

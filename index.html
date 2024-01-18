@@ -25,7 +25,10 @@
     <link rel="icon" type="image/x-icon" href="img/Logo.png" />
   </head>
   <body>
-    <div class="bg-[#181818] h-screen" x-data="{ openMenu : false }">
+    <div
+      class="bg-[#181818] h-[90vh] xs:h-screen"
+      x-data="{ openMenu : false }"
+    >
       <header
         class="fixed inset-x-0 top-0 z-50 bg-gradient-to-b from-[#121212] nav-bg-initial"
       >
@@ -145,9 +148,11 @@
       </header>
 
       <div
-        class="w-full mb-20 brightness-50 h-screen lg:bg-fixed bg-cover bg-center flex justify-center items-center blur-[1.5px]"
+        class="w-full mb-20 brightness-50 h-[90vh] xs:h-screen lg:bg-fixed bg-cover bg-center flex justify-center items-center blur-[1.5px]"
         style="background-image: url(img/IMG_2738_color.jpg)"
-      ></div>
+      >
+        <!-- Your existing content -->
+      </div>
       <div
         class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true"
@@ -177,7 +182,7 @@
         ></div>
       </div>
       <div
-        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto py-32 w-[91%] sm:py-48 lg:py-56"
+        class="absolute top-48 xs:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto py-0 w-[91%] xs:py-48 sm:py-48 lg:py-56"
       >
         <div class="mb-1 flex justify-center">
           <div
@@ -203,7 +208,9 @@
               fugiat aliqua.
             </p> -->
           <div class="flex items-center mt-6 justify-center h-3 mb-3">
-            <span class="bg-white/50 h-[1.2px] w-[2.3rem]"></span>
+            <span
+              class="bg-white/50 hidden xs:inline h-[1.2px] w-[2.3rem]"
+            ></span>
           </div>
           <div class="mt-4 flex items-center justify-center gap-x-6">
             <a
@@ -267,7 +274,7 @@
       </a>
     </div>
 
-    <div class="hidden sm:flex items-center">
+    <div class="hidden lg:flex items-center">
       <div
         class="absolute animate-pulse -bottom-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
       >
@@ -418,7 +425,7 @@
       <div class="relative isolate">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div
-            class="mx-auto flex max-w-2xl flex-col gap-16 bg-gradient-to-br from-[#ebebeb07] to-slate-50/5 px-6 pt-2 pb-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20"
+            class="mx-auto flex max-w-2xl flex-col gap-16 bg-gradient-to-br from-[#ebebeb07] to-slate-50/5 px-6 pt-12 pb-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20"
           >
             <img
               class="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
