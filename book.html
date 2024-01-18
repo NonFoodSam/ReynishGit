@@ -277,12 +277,16 @@
   
       const labels = document.querySelectorAll("#frequencySwitch label");
   
-      labels.forEach((label, index) => {
-        const radioInput = label.querySelector("input[type=radio]");
-        if (radioInput.checked) {
-          label.classList.add("bg-[#b86f33]", "text-white");
-        }
+      // Remove the highlighting class from all labels
+      labels.forEach((label) => {
+        label.classList.remove("bg-[#b86f33]", "text-white");
       });
+  
+      // Find and highlight the currently checked option
+      const checkedLabel = document.querySelector("#frequencySwitch input[type=radio]:checked").parentNode;
+      if (checkedLabel) {
+        checkedLabel.classList.add("bg-[#b86f33]", "text-white");
+      }
     });
   
     function showBox(option) {
@@ -343,6 +347,7 @@
       bundleFrequencyElement.textContent = '/month';
     }
   </script>
+  
   
 </div>
 
