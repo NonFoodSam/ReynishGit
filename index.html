@@ -98,7 +98,11 @@
             <div class="flex items-center justify-between">
               <a href="#" class="-m-1.5 p-1.5">
                 <span class="sr-only">Your Company</span>
-                <img class="h-8 w-auto" src="img/Logo.png" alt="" />
+                <img
+                  class="sm:h-5 h-[1.1rem] w-auto"
+                  src="img/Logo.png"
+                  alt=""
+                />
               </a>
               <button
                 type="button"
@@ -146,8 +150,52 @@
           </div>
         </div>
       </header>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var header = document.getElementById("header");
 
+          window.addEventListener("scroll", function () {
+            // Calculate the scroll position
+            var scrollPosition = window.scrollY || window.pageYOffset;
+
+            // Calculate the opacity based on the scroll position (adjust the values as needed)
+            var opacity = 1 - scrollPosition / 420; // Change 300 to control the speed of the fade-out
+
+            // Ensure the opacity is within the range [0, 1]
+            opacity = Math.min(1, Math.max(0, opacity));
+
+            // Apply the opacity to the header
+            header.style.opacity = opacity;
+          });
+        });
+        // secondscript
+        document.addEventListener("DOMContentLoaded", function () {
+          var headerImg = document.getElementById("header-img");
+
+          window.addEventListener("scroll", function () {
+            // Calculate the scroll position
+            var scrollPosition = window.scrollY || window.pageYOffset;
+
+            // Calculate the opacity based on the scroll position (adjust the values as needed)
+            var opacity = 1 - scrollPosition / 680; // Change 500 to control the speed of the fade-out for #header-img
+
+            // Ensure the opacity is within the range [0, 1]
+            opacity = Math.min(1, Math.max(0, opacity));
+
+            // Apply the opacity to #header-img
+            headerImg.style.opacity = opacity;
+
+            // Toggle the fade-out class based on opacity
+            if (opacity === 0) {
+              headerImg.classList.add("fade-out");
+            } else {
+              headerImg.classList.remove("fade-out");
+            }
+          });
+        });
+      </script>
       <div
+        id="header-img"
         class="w-full mb-20 brightness-50 h-[90vh] xs:h-screen lg:bg-fixed bg-cover bg-center flex justify-center items-center blur-[1.5px]"
         style="background-image: url(img/IMG_2738_color.jpg)"
       >
@@ -157,7 +205,7 @@
         class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true"
       >
-        <div
+        <!-- <div
           class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#8088ff] to-[#89dbfc] opacity-5 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
           style="
             clip-path: polygon(
@@ -179,10 +227,11 @@
               74.1% 44.1%
             );
           "
-        ></div>
+        ></div> -->
       </div>
       <div
-        class="absolute top-48 xs:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto py-0 w-[91%] xs:py-48 sm:py-48 lg:py-56"
+        id="header"
+        class="absolute top-[43%] xs:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mx-auto py-0 w-[91%] xs:py-48 sm:py-48 lg:py-56"
       >
         <div class="mb-1 flex justify-center">
           <div
@@ -207,15 +256,15 @@
               lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
               fugiat aliqua.
             </p> -->
-          <div class="flex items-center mt-6 justify-center h-3 mb-3">
+          <div class="flex items-center justify-center h-3 xs:mb-3 mb-1">
             <span
-              class="bg-white/50 hidden xs:inline h-[1.2px] w-[2.3rem]"
+              class="bg-white/50 mt-8 hidden xs:inline h-[1.2px] w-[2.3rem]"
             ></span>
           </div>
-          <div class="mt-4 flex items-center justify-center gap-x-6">
+          <div class="flex items-center justify-center gap-x-6">
             <a
               href="book.html"
-              class="transition duration-500 hover:scale-105 rounded-full bg-amber-600/50 px-4 backdrop-blur-[2px] py-[0.4rem] text-sm font-normal text-white shadow-sm"
+              class="transition duration-500 hover:scale-105 mt:0 xs:mt-6 rounded-full bg-amber-600/50 px-4 backdrop-blur-[2px] py-[0.4rem] text-sm font-normal text-white shadow-sm"
               >Book online</a
             >
           </div>
@@ -228,7 +277,7 @@
         class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
         aria-hidden="true"
       >
-        <div
+        <!-- <div
           class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#8093ff] to-[#89c4fc] opacity-5 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
           style="
             clip-path: polygon(
@@ -250,10 +299,10 @@
               74.1% 44.1%
             );
           "
-        ></div>
+        ></div> -->
       </div>
     </div>
-    <div class="fixed bottom-5 right-5">
+    <div class="fixed bottom-5 z-20 right-5">
       <a href="contact.html">
         <button
           class="border-[1px] border-amber-600 backdrop-blur-md rounded-full text-white font-normal py-3 px-3"
@@ -603,7 +652,7 @@
           <div class="mt-10 flex items-center justify-center gap-x-6">
             <a
               href="contact.html"
-              class="rounded-md bg-amber-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-amber-800"
+              class="rounded-full bg-amber-600 px-6 py-2 text-sm items-center font-semibold text-white shadow-sm hover:bg-amber-800"
               >Contact me</a
             >
           </div>

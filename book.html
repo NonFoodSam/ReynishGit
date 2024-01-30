@@ -3,8 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Online</title>
+    <title>Reynish Audio</title>
     <link rel="stylesheet" href="output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script
       defer
@@ -14,58 +26,60 @@
   </head>
   <body>
     <div class="bg-gray-900" x-data="{ openMenu : false }">
-      <header class="absolute inset-x-0 top-0 z-50">
-        <nav
-          class="flex items-center justify-between p-6 lg:px-8"
-          aria-label="Global"
+      <header
+        class="fixed inset-x-0 top-0 z-50 bg-gradient-to-b from-[#121212] nav-bg-initial"
+      >
+      <nav
+      class="flex items-center justify-between p-6 lg:px-8"
+      aria-label="Global"
+    >
+      <div class="flex lg:flex-1">
+        <a href="index.html" class="-m-1.5 p-1.5">
+          <span class="sr-only">Your Company</span>
+          <img class="sm:h-5 h-[1.1rem] w-auto" src="img/Logo.png" alt="" />
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button
+          type="button"
+          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
+          @click="openMenu = !openMenu"
         >
-          <div class="flex lg:flex-1">
-            <a href="index.html" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img class="h-6 w-auto" src="img/Logo.png" alt="" />
-            </a>
-          </div>
-          <div class="flex lg:hidden">
-            <button
-              type="button"
-              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
-              @click="openMenu = !openMenu"
-            >
-              <span class="sr-only">Open main menu</span>
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="hidden flex items-center lg:flex lg:gap-x-12">
-            <a
-              href="portfolio.html"
-              class="text-sm font-semibold leading-6 text-white"
-              >Portfolio</a
-            >
-            <a
-              href="contact.html"
-              class="text-sm font-semibold leading-6 text-white"
-              >Contact</a
-            >
-            <a
-              href="book.html"
-              class="px-5 py-1 bg-[#935727] rounded-full text-sm font-semibold leading-6 text-white"
-              >Book Online
-            </a>
-          </div>
-        </nav>
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden items-center lg:flex lg:gap-x-12">
+        <a
+          href="portfolio.html"
+          class="text-sm font-normal leading-6 text-white"
+          >Portfolio</a
+        >
+        <a
+          href="contact.html"
+          class="text-sm font-normal leading-6 text-white"
+          >Contact</a
+        >
+        <a
+          href="book.html"
+          class="px-5 py-1 bg-amber-600/80 hover:bg-amber-600/60 rounded-full text-sm font-normal leading-6 text-white"
+          >Book Online
+        </a>
+      </div>
+    </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
         <div
           class="lg:hidden"
@@ -81,7 +95,7 @@
             <div class="flex items-center justify-between">
               <a href="#" class="-m-1.5 p-1.5">
                 <span class="sr-only">Your Company</span>
-                <img class="h-8 w-auto" src="img/Logo.png" alt="" />
+                <img class="sm:h-5 h-[1.1rem] w-auto" src="img/Logo.png" alt="" />
               </a>
               <button
                 type="button"
@@ -110,17 +124,17 @@
                 <div class="space-y-2 py-6">
                   <a
                     href="portfolio.html"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800/30"
                     >Portfolio</a
                   >
                   <a
                     href="contact.html"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800/30"
                     >Contact</a
                   >
                   <a
                     href="book.html"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800/30"
                     >Book Online</a
                   >
                 </div>
@@ -156,7 +170,7 @@
 </div>
 </div> -->
 
-<div class="mx-auto max-w-7xl mt-12 sm:mt-32 pb-10 pt-20 px-6 lg:px-8">
+<div class="mx-auto max-w-7xl mt-8 mb-14 sm:mt-8 pb-10 pt-20 px-6 lg:px-8">
   <div class="mx-auto max-w-4xl text-center">
       <h2 class="text-base font-semibold leading-7 text-[#bd763c]">
           Pricing
@@ -193,7 +207,9 @@
               Recording
           </h3>
           <p class="mt-4 text-sm leading-6 text-gray-200">
-              The essentials to provide your best work for clients.
+            Capture your sound with our professional recording services.
+            Our team ensures precision and excellence for a recording that
+            reflects your artistry with clarity.
           </p>
           <p class="mt-6 flex items-baseline gap-x-1">
               <!-- Price, update based on frequency toggle state -->
@@ -202,7 +218,7 @@
               <span id="frequency" class="text-sm font-semibold leading-6 text-gray-200">/month</span>
           </p>
 
-          <input type="range" id="frequencySlider" min="1" max="3" step="0.1" value="1"
+          <input type="range" id="frequencySlider" min="1" max="6" step="" value="1"
           class="mt-9 w-full appearance-none cursor-pointer"
           oninput="updatePrice(this.value)" />
       
@@ -210,157 +226,235 @@
           <ul role="list" class="mt-8 space-y-3 text-sm leading-6 xl:mt-10 text-gray-200">
               <!-- ... Your list items remain unchanged ... -->
           </ul>
-          <a href="#" aria-describedby="tier-freelancer"
-              class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-[#935727] text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-[#935727]">Buy
-              plan</a>
+          <a href="contact.html" aria-describedby="tier-freelancer"
+              class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-[#935727] text-white shadow-sm hover:bg-amber-400 focus-visible:outline-[#935727]">Contact us</a>
       </div>
   </div>
 
   <!-- Box for Mixing -->
-  <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3" id="mixingBox" style="display: none;">
-      <div class="rounded-3xl p-8 ring-1 xl:p-10 ring-gray-200">
-          <h3 id="tier-mixing" class="text-lg font-semibold leading-8 text-white">
-              Mixing
-          </h3>
-          <p class="mt-4 text-sm leading-6 text-gray-200">
-              Enhance the sound and balance of your audio tracks.
-          </p>
-          <p class="mt-6 flex items-baseline gap-x-1">
-              <!-- Price, update based on frequency toggle state -->
-              <span id="mixingPrice" class="text-4xl font-bold tracking-tight text-white">$30</span>
-              <!-- Payment frequency, update based on frequency toggle state -->
-              <span id="mixingFrequency" class="text-sm font-semibold leading-6 text-gray-200">/session</span>
-          </p>
+<div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-auto lg:max-w-[35rem] lg:grid-cols-3" id="mixingBox" style="display: none;">
+  <div class="rounded-3xl p-8 ring-1 xl:p-10 ring-gray-200">
+      <h3 id="tier-mixing" class="text-lg font-semibold leading-8 text-white">
+          Mixing
+      </h3>
+      <p class="mt-4 text-sm leading-6 text-gray-200">
+        Transform your tracks with our meticulous mixing services. Our
+        engineers craft a harmonious blend that elevates each element
+        of your music, creating a seamless listening experience.
+      </p>
+      <p class="mt-6 flex items-baseline gap-x-1">
+          <!-- Price, update based on frequency toggle state -->
+          <span id="mixingPrice" class="text-4xl font-bold tracking-tight text-white">$30</span>
+          <!-- Payment frequency, update based on frequency toggle state -->
+          <span id="mixingFrequency" class="text-sm font-semibold leading-6 text-gray-200">/session</span>
+      </p>
 
-          <input type="range" id="mixingFrequencySlider" min="1" max="3" step="1" value="1"
-              class="mt-4 w-full" oninput="updateMixingPrice(this.value)" />
+      <input type="range" id="mixingFrequencySlider" min="1" max="3" step="1" value="1" class="mt-4 w-full" oninput="updateMixingPrice(this.value)" />
 
-          <ul role="list" class="mt-8 space-y-3 text-sm leading-6 xl:mt-10 text-gray-200">
-              <!-- ... Your list items remain unchanged ... -->
-          </ul>
-          <a href="#" aria-describedby="tier-mixing"
-              class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-[#935727] text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-[#935727]">Buy
-              plan</a>
-      </div>
+      <ul role="list" class="mt-8 space-y-3 text-sm leading-6 xl:mt-10 text-gray-200">
+          <!-- ... Your list items remain unchanged ... -->
+      </ul>
+      <a href="contact.html" aria-describedby="tier-mixing" class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-[#935727] text-white shadow-sm hover:bg-amber-400 focus-visible:outline-[#935727]">Contact us</a>
   </div>
+</div>
 
-  <!-- Box for Bundle -->
-  <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3" id="bundleBox" style="display: none;">
-      <div class="rounded-3xl p-8 ring-1 xl:p-10 ring-gray-200">
-          <h3 id="tier-bundle" class="text-lg font-semibold leading-8 text-white">
-              Bundle
-          </h3>
-          <p class="mt-4 text-sm leading-6 text-gray-200">
-              All-in-one package for comprehensive audio production.
-          </p>
-          <p class="mt-6 flex items-baseline gap-x-1">
-              <!-- Price, update based on frequency toggle state -->
-              <span id="bundlePrice" class="text-4xl font-bold tracking-tight text-white">$50</span>
-              <!-- Payment frequency, update based on frequency toggle state -->
-              <span id="bundleFrequency" class="text-sm font-semibold leading-6 text-gray-200">/month</span>
-          </p>
+<!-- Box for Bundle -->
+<div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-auto lg:max-w-[35rem] lg:grid-cols-3" id="bundleBox" style="display: none;">
+  <div class="rounded-3xl p-8 ring-1 xl:p-10 ring-gray-200">
+      <h3 id="tier-bundle" class="text-lg font-semibold leading-8 text-white">
+          Bundle
+      </h3>
+      <p class="mt-4 text-sm leading-6 text-gray-200">
+        Experience audio refinement with our all-in-one Mastery
+        Bundle. This package integrates recording, mixing, and
+        mastering services, enhancing every facet of your music for
+        captivating brilliance.
+      </p>
+      <p class="mt-6 flex items-baseline gap-x-1">
+          <!-- Price, update based on frequency toggle state -->
+          <span id="bundlePrice" class="text-4xl font-bold tracking-tight text-white">$50</span>
+          <!-- Payment frequency, update based on frequency toggle state -->
+          <span id="bundleFrequency" class="text-sm font-semibold leading-6 text-gray-200">/month</span>
+      </p>
 
-          <input type="range" id="bundleFrequencySlider" min="1" max="3" step="1" value="1"
-              class="mt-4 w-full" oninput="updateBundlePrice(this.value)" />
+      <input type="range" id="bundleFrequencySlider" min="1" max="3" step="1" value="1" class="mt-4 w-full" oninput="updateBundlePrice(this.value)" />
 
-          <ul role="list" class="mt-8 space-y-3 text-sm leading-6 xl:mt-10 text-gray-200">
-              <!-- ... Your list items remain unchanged ... -->
-          </ul>
-          <a href="#" aria-describedby="tier-bundle"
-              class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-[#935727] text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-[#935727]">Buy
-              plan</a>
-      </div>
+      <ul role="list" class="mt-8 space-y-3 text-sm leading-6 xl:mt-10 text-gray-200">
+          <!-- ... Your list items remain unchanged ... -->
+      </ul>
+      <a href="contact.html" aria-describedby="tier-bundle" class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 bg-[#935727] text-white shadow-sm hover:bg-amber-400 focus-visible:outline-[#935727]">Contact us</a>
   </div>
+  
+</div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Show the Recording box on page load
-      showBox(getSelectedOption() || 'recording');
-  
-      const labels = document.querySelectorAll("#frequencySwitch label");
-  
-      // Remove the highlighting class from all labels
-      labels.forEach((label) => {
-        label.classList.remove("bg-[#b86f33]", "text-white");
-      });
-  
-      // Find and highlight the currently stored option
-      const storedOption = getSelectedOption();
-      const checkedLabel = document.querySelector(`#frequencySwitch [value='${storedOption}']`).parentNode;
-      if (checkedLabel) {
-        checkedLabel.classList.add("bg-[#b86f33]", "text-white");
-      }
+
+
+  <!-- Add custom labels for each slider -->
+<script>
+ const recordingLabels = [
+  "£25",
+  "£200",
+  "£180",
+  "£160",
+  "£140",
+  "£130"
+];
+  const recordingFrequencies = ["/hour", "/day", "/3-4 days (per day)", "/5-9 days (per day)", "/10-19 days (per day)", "/20+ days (per day)"];
+
+  const mixingLabels = ["£80", "£350", "£600"];
+  const mixingFrequencies = ["/Single mix", "/EP mix", "/Album mix"];
+
+  const bundleLabels = ["£250", "£500", "£700"];
+  const bundleFrequencies = ["/Single Recording & Mixing Bundle", "/EP Recording & Mixing Bundle", "/Album Recording & Mixing Bundle"];
+
+  document.addEventListener("DOMContentLoaded", function () {
+    showBox(getSelectedOption() || 'recording');
+
+    const labels = document.querySelectorAll("#frequencySwitch label");
+
+    labels.forEach((label) => {
+      label.classList.remove("bg-[#b86f33]", "text-white");
     });
-  
-    function showBox(option) {
-      // Save the selected option in local storage
-      setSelectedOption(option);
-  
-      // Hide all boxes
-      document.getElementById('recordingBox').style.display = 'none';
-      document.getElementById('mixingBox').style.display = 'none';
-      document.getElementById('bundleBox').style.display = 'none';
-  
-      // Show the selected box
-      document.getElementById(`${option}Box`).style.display = 'block';
-  
-      // Update styles for the selected option in the toggle
-      const labels = document.querySelectorAll("#frequencySwitch label");
-      labels.forEach((label) => {
-        label.classList.remove("bg-[#b86f33]", "text-white");
-      });
-  
-      const selectedLabel = document.querySelector(`#frequencySwitch [value='${option}']`).parentNode;
-      selectedLabel.classList.add("bg-[#b86f33]", "text-white");
+
+    const storedOption = getSelectedOption();
+    const checkedLabel = document.querySelector(`#frequencySwitch [value='${storedOption}']`).parentNode;
+    if (checkedLabel) {
+      checkedLabel.classList.add("bg-[#b86f33]", "text-white");
     }
-  
-    function updatePrice(sliderValue) {
-      // Get the corresponding elements
-      const priceElement = document.getElementById('price');
-      const frequencyElement = document.getElementById('frequency');
-  
-      // Update price based on the slider value
-      let price = 15 + (sliderValue - 1) * 10;
-      priceElement.textContent = `$${price}`;
-  
-      // Update frequency based on the slider value
-      frequencyElement.textContent = '/month';
+  });
+
+  function showBox(option) {
+    setSelectedOption(option);
+
+    document.getElementById('recordingBox').style.display = 'none';
+    document.getElementById('mixingBox').style.display = 'none';
+    document.getElementById('bundleBox').style.display = 'none';
+
+    document.getElementById(`${option}Box`).style.display = 'block';
+
+    const labels = document.querySelectorAll("#frequencySwitch label");
+    labels.forEach((label) => {
+      label.classList.remove("bg-[#b86f33]", "text-white");
+    });
+
+    const selectedLabel = document.querySelector(`#frequencySwitch [value='${option}']`).parentNode;
+    selectedLabel.classList.add("bg-[#b86f33]", "text-white");
+  }
+
+  function updatePrice(sliderValue) {
+    const priceElement = document.getElementById('price');
+    const frequencyElement = document.getElementById('frequency');
+
+    let index = sliderValue - 1;
+    if (index >= 0 && index < recordingLabels.length) {
+      priceElement.textContent = recordingLabels[index];
+      frequencyElement.textContent = recordingFrequencies[index];
     }
-  
-    function updateMixingPrice(sliderValue) {
-      // Get the corresponding elements
-      const mixingPriceElement = document.getElementById('mixingPrice');
-      const mixingFrequencyElement = document.getElementById('mixingFrequency');
-  
-      // Update price based on the slider value
-      let price = 30 + (sliderValue - 1) * 10;
-      mixingPriceElement.textContent = `$${price}`;
-  
-      // Update frequency based on the slider value
-      mixingFrequencyElement.textContent = '/session';
+  }
+
+  function updateMixingPrice(sliderValue) {
+    const mixingPriceElement = document.getElementById('mixingPrice');
+    const mixingFrequencyElement = document.getElementById('mixingFrequency');
+
+    let index = sliderValue - 1;
+    if (index >= 0 && index < mixingLabels.length) {
+      mixingPriceElement.textContent = mixingLabels[index];
+      mixingFrequencyElement.textContent = mixingFrequencies[index];
     }
-  
-    function updateBundlePrice(sliderValue) {
-      // Get the corresponding elements
-      const bundlePriceElement = document.getElementById('bundlePrice');
-      const bundleFrequencyElement = document.getElementById('bundleFrequency');
-  
-      // Update price based on the slider value
-      let price = 50 + (sliderValue - 1) * 10;
-      bundlePriceElement.textContent = `$${price}`;
-  
-      // Update frequency based on the slider value
-      bundleFrequencyElement.textContent = '/month';
+  }
+
+  function updateBundlePrice(sliderValue) {
+    const bundlePriceElement = document.getElementById('bundlePrice');
+    const bundleFrequencyElement = document.getElementById('bundleFrequency');
+
+    let index = sliderValue - 1;
+    if (index >= 0 && index < bundleLabels.length) {
+      bundlePriceElement.textContent = bundleLabels[index];
+      bundleFrequencyElement.textContent = bundleFrequencies[index];
     }
-  
-    function getSelectedOption() {
-      return localStorage.getItem('selectedOption');
+  }
+
+  function getSelectedOption() {
+    return localStorage.getItem('selectedOption');
+  }
+
+  function setSelectedOption(option) {
+    localStorage.setItem('selectedOption', option);
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    showBox(getSelectedOption() || 'recording');
+
+    const labels = document.querySelectorAll("#frequencySwitch label");
+
+    labels.forEach((label) => {
+      label.classList.remove("bg-[#b86f33]", "text-white");
+    });
+
+    const storedOption = getSelectedOption();
+    const checkedLabel = document.querySelector(`#frequencySwitch [value='${storedOption}']`).parentNode;
+    if (checkedLabel) {
+      checkedLabel.classList.add("bg-[#b86f33]", "text-white");
     }
-  
-    function setSelectedOption(option) {
-      localStorage.setItem('selectedOption', option);
+
+    // Set the default values on page load
+    const initialSliderValue = localStorage.getItem('initialSliderValue') || 1;
+    document.getElementById('frequencySlider').value = initialSliderValue;
+    document.getElementById('mixingFrequencySlider').value = initialSliderValue;
+    document.getElementById('bundleFrequencySlider').value = initialSliderValue;
+
+    updatePrice(initialSliderValue);
+    updateMixingPrice(initialSliderValue);
+    updateBundlePrice(initialSliderValue);
+  });
+
+  function updatePrice(sliderValue) {
+    const priceElement = document.getElementById('price');
+    const frequencyElement = document.getElementById('frequency');
+
+    let index = sliderValue - 1;
+    if (index >= 0 && index < recordingLabels.length) {
+      priceElement.textContent = recordingLabels[index];
+      frequencyElement.textContent = recordingFrequencies[index];
     }
-  </script>
+  }
+
+  function updateMixingPrice(sliderValue) {
+    const mixingPriceElement = document.getElementById('mixingPrice');
+    const mixingFrequencyElement = document.getElementById('mixingFrequency');
+
+    let index = sliderValue - 1;
+    if (index >= 0 && index < mixingLabels.length) {
+      mixingPriceElement.textContent = mixingLabels[index];
+      mixingFrequencyElement.textContent = mixingFrequencies[index];
+    }
+  }
+
+  function updateBundlePrice(sliderValue) {
+    const bundlePriceElement = document.getElementById('bundlePrice');
+    const bundleFrequencyElement = document.getElementById('bundleFrequency');
+
+    let index = sliderValue - 1;
+    if (index >= 0 && index < bundleLabels.length) {
+      bundlePriceElement.textContent = bundleLabels[index];
+      bundleFrequencyElement.textContent = bundleFrequencies[index];
+    }
+  }
+
+  function getSelectedOption() {
+    return localStorage.getItem('selectedOption');
+  }
+
+  function setSelectedOption(option) {
+    localStorage.setItem('selectedOption', option);
+  }
+
+  // Store the initial slider value in localStorage
+  function setInitialSliderValue(value) {
+    localStorage.setItem('initialSliderValue', value);
+  }
+</script>
+
+
   
   
 </div>

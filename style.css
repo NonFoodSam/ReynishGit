@@ -82,6 +82,148 @@ body {
   border-radius: 0.1rem; /* Adjust for rounded edges */
 }
 
+/* Mixing Slider */
+
+#mixingFrequencySlider {
+  height: 2rem; /* Adjust the overall height for better visibility */
+  appearance: none;
+  background: transparent;
+
+  /* Vendor prefixes for different browsers */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Styling for the slider thumb in WebKit browsers (Chrome, Safari) */
+#mixingFrequencySlider::-webkit-slider-thumb {
+  height: 2rem;
+  width: 2rem;
+  background-color: #171717;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  margin-top: -1rem; /* Adjust to center the thumb vertically */
+}
+
+/* Styling for the track in WebKit browsers */
+#mixingFrequencySlider::-webkit-slider-runnable-track {
+  height: 0.2rem;
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 0.1rem; /* Adjust for rounded edges */
+}
+
+/* Styling for the slider thumb in Firefox */
+#mixingFrequencySlider::-moz-range-thumb {
+  height: 2rem;
+  width: 2rem;
+  background-color: #171717;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+/* Styling for the track in Firefox */
+#mixingFrequencySlider::-moz-range-track {
+  height: 0.2rem;
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 0.1rem; /* Adjust for rounded edges */
+}
+
+/* Styling for the slider thumb in IE/Edge */
+#mixingFrequencySlider::-ms-thumb {
+  height: 2rem;
+  width: 2rem;
+  background-color: #171717;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  -ms-appearance: none;
+  margin-top: -1rem; /* Adjust to center the thumb vertically */
+}
+
+/* Styling for the track in IE/Edge */
+#mixingFrequencySlider::-ms-track {
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 0.1rem; /* Adjust for rounded edges */
+}
+
+/* Additional styling for the track in IE/Edge when thumb is not pressed */
+#mixingFrequencySlider::-ms-fill-lower,
+#mixingFrequencySlider::-ms-fill-upper {
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 0.1rem; /* Adjust for rounded edges */
+}
+/* 
+Bundle */
+
+#bundleFrequencySlider {
+  height: 2rem; /* Adjust the overall height for better visibility */
+  appearance: none;
+  background: transparent;
+
+  /* Vendor prefixes for different browsers */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Styling for the slider thumb in WebKit browsers (Chrome, Safari) */
+#bundleFrequencySlider::-webkit-slider-thumb {
+  height: 2rem;
+  width: 2rem;
+  background-color: #171717;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  margin-top: -1rem; /* Adjust to center the thumb vertically */
+}
+
+/* Styling for the track in WebKit browsers */
+#bundleFrequencySlider::-webkit-slider-runnable-track {
+  height: 0.2rem;
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 0.1rem; /* Adjust for rounded edges */
+}
+
+/* Styling for the slider thumb in Firefox */
+#bundleFrequencySlider::-moz-range-thumb {
+  height: 2rem;
+  width: 2rem;
+  background-color: #171717;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+/* Styling for the track in Firefox */
+#bundleFrequencySlider::-moz-range-track {
+  height: 0.2rem;
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 0.1rem; /* Adjust for rounded edges */
+}
+
+/* Styling for the slider thumb in IE/Edge */
+#bundleFrequencySlider::-ms-thumb {
+  height: 2rem;
+  width: 2rem;
+  background-color: #171717;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  -ms-appearance: none;
+  margin-top: -1rem; /* Adjust to center the thumb vertically */
+}
+
+/* Styling for the track in IE/Edge */
+#bundleFrequencySlider::-ms-track {
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 0.1rem; /* Adjust for rounded edges */
+}
+
+/* Additional styling for the track in IE/Edge when thumb is not pressed */
+#bundleFrequencySlider::-ms-fill-lower,
+#bundleFrequencySlider::-ms-fill-upper {
+  background-color: #ccc; /* Adjust as needed */
+  border-radius: 0.1rem; /* Adjust for rounded edges */
+}
+
 
 .nav-bg-initial {
   background: linear-gradient(to bottom, #202020, /* your initial background color */);
@@ -107,6 +249,23 @@ body {
   margin: 0;
 }
 
+#header {
+  opacity: 1;
+  transition: opacity 0.1s linear; /* Use linear timing function for direct mapping to scroll position */
+}
+
+#header.fade-out {
+  opacity: 0;
+}
+
+#header-img {
+  opacity: 1;
+  transition: opacity 0.2s linear; /* Use linear timing function for direct mapping to scroll position */
+}
+
+#header-img.fade-out {
+  opacity: 0;
+}
 
   
 /* mobile */
