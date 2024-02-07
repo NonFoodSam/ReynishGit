@@ -24,13 +24,52 @@
     ></script>
     <link rel="icon" type="image/x-icon" href="img/Logo.png" />
   </head>
-  <body>
+  <body class="">
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        function fadeOnScroll(elementId, threshold) {
+          const fadeDivs = document.querySelectorAll(`#${elementId}`);
+      
+          fadeDivs.forEach(function(fadeDiv) {
+            function adjustOpacity() {
+              let scrollPosition = window.scrollY;
+              let elementOffset = fadeDiv.offsetTop;
+              let elementHeight = fadeDiv.offsetHeight;
+              let windowHeight = window.innerHeight;
+      
+              let fadeStart = elementOffset - windowHeight;
+              let fadeEnd = elementOffset + elementHeight * threshold; // Set fadeEnd to a fraction of the div's height
+      
+              let opacity;
+      
+              if (scrollPosition >= fadeStart && scrollPosition <= fadeEnd) {
+                opacity = 2 * (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+              } else {
+                opacity = scrollPosition < fadeStart ? 0 : 1;
+              }
+      
+              fadeDiv.style.opacity = opacity;
+            }
+      
+            window.addEventListener("scroll", adjustOpacity);
+      
+            // Adjust opacity on page load
+            adjustOpacity();
+          });
+        }
+      
+        // Apply fading effect to any div with the specified ID
+        fadeOnScroll("fadeDiv", 0.045); // You can adjust the threshold here
+      });
+      </script>
+      
+      
     <div class="bg-gray-900" x-data="{ openMenu : false }">
       <header
-        class="fixed inset-x-0 top-0 z-50 bg-gradient-to-b from-[#121212] nav-bg-initial"
+        class="relative inset-x-0 top-0 z-50 bg-gradient-to-b from-[#121212] nav-bg-initial"
       >
         <nav
-          class="flex items-center justify-between p-6 lg:px-8"
+          class="flex bg-[#171717] items-center justify-between p-6 lg:px-8"
           aria-label="Global"
         >
           <div class="flex lg:flex-1">
@@ -148,25 +187,63 @@
         </div>
       </header>
     </div>
-    <div class="bg-transparent pb-0 pt-24 sm:pt-32">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl lg:mx-0">
-          <p class="text-base font-semibold leading-7 text-amber-600">
-            Recent work
-          </p>
-          <h2
-            class="mt-2 text-4xl font-bold tracking-tight text-white sm:text-6xl"
+    <div class="">
+      <main>
+        <div class="relative isolate">
+          <svg
+            class="absolute inset-x-0 -top-20 -z-10 h-[32rem] w-full stroke-gray-200 [mask-image:radial-gradient(18rem_18rem_at_center,white,transparent)]"
+            aria-hidden="true"
           >
-            Recent Client Projects
-          </h2>
-          <p class="mt-6 text-lg leading-8 text-gray-300">
-            Below are a few of my recent client projects, feel free to look
-            through and send any comments or questions through to me on the
-            Contact page.
-          </p>
+            <defs>
+              <pattern
+                id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
+                width="200"
+                height="200"
+                x="50%"
+                y="-1"
+                patternUnits="userSpaceOnUse"
+              >
+                <path d="M.5 200V.5H200" fill="none" />
+              </pattern>
+            </defs>
+
+            <rect
+              class="opacity-20"
+              width="100%"
+              height="100%"
+              stroke-width="0"
+              fill="url(#1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84)"
+            />
+          </svg>
+          <div
+            class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
+            aria-hidden="true"
+            ></div>
+            <div class="overflow-hidden">
+            <div
+              class="mx-auto max-w-7xl px-6 sm:pb-12 sm:pt-24 pb-2 pt-8 lg:px-8"
+            >
+              <div
+                class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center"
+              >
+                <div class="relative w-full max-w-xl lg:shrink-0 xl:max-w-2xl">
+                  <h1
+                    class="text-4xl font-bold tracking-tight bg-gradient-to-b from-slate-50 via-gray-100 to-gray-400 bg-clip-text text-transparent sm:text-6xl"
+                  >
+                 
+                    Portfolio
+                  </h1>
+                  <p
+                    class="mt-6 text-lg leading-8 text-gray-400 sm:max-w-md lg:max-w-none"
+                  >
+                  Explore a selection of recent client projects crafted by Reynish Audio. Feel free to review and share your thoughts or questions via the Contact page. I welcome your input and look forward to connecting with you.
+                  </p>
+                </div>
+                
         </div>
-      </div>
+      </main>
     </div>
+
     <!-- Toggle -->
     <!-- <div class="bg-transparent py-5 sm:py-5"> -->
     <!-- Add a dropdown menu for Recording/Mixing -->
@@ -202,235 +279,502 @@
         });
       });
     </script>
-    <!-- Script -->
-    <div class="bg-transparent py-5 sm:py-5">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div
-          class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
-        >
-          <article
-            class="flex flex-col items-start justify-between"
-            data-article-id="2"
-          >
-            <a href="Parallel-Rooms.html">
-              <div class="relative w-full">
-                <img
-                  src="img/Oskar Sundberg - Parallel Rooms.JPG"
-                  alt=""
-                  class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                />
-                <div
-                  class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 bg-gradient-to-tl from-gray-300/40 to-transparent"
-                ></div>
-              </div>
-            </a>
-            <div class="max-w-xl">
-              <div class="mt-8 flex items-center gap-x-4 text-xs">
-                <time datetime="2020-03-16" class="text-gray-400"
-                  >Dec 01, 2023</time
-                >
-                <a
-                  class="relative z-10 rounded-full bg-amber-600 px-3 py-1.5 font-medium text-white"
-                  >Mixing</a
-                >
-              </div>
-              <div class="group relative">
-                <h3
-                  class="mt-3 text-lg font-semibold leading-6 text-gray-200 group-hover:text-gray-400"
-                >
-                  <a href="Parallel-Rooms.html">
-                    <span class="absolute inset-0"></span>
-                    Parallel Rooms Recording & Mixing
-                  </a>
-                </h3>
-                <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-300">
-                  Illo sint voluptas. Error voluptates culpa eligendi. Hic vel
-                  totam vitae illo. Non aliquid explicabo necessitatibus unde.
-                  Sed exercitationem placeat consectetur nulla deserunt vel.
-                  Iusto corrupti dicta.
-                </p>
-              </div>
-              <div class="relative mt-8 flex items-center gap-x-4">
-                <div class="text-sm leading-6">
-                  <p class="font-semibold text-gray-100">
-                    <a href="Parallel-Rooms.html">
-                      <span class="absolute inset-0"></span>
-                      Oskar Sundberg
-                    </a>
-                  </p>
-                  <p class="text-gray-400">Parallel Rooms</p>
-                </div>
-              </div>
-            </div>
-          </article>
 
-          <article
-            class="flex flex-col items-start justify-between"
-            data-article-id="1"
-          >
-            <a href="#">
-              <div class="relative w-full">
-                <img
-                  src="img/Adam Maka - The Hiraeth.jpg"
-                  alt=""
-                  class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                />
-                <div
-                  class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 bg-gradient-to-tl from-gray-300/40 to-transparent"
-                ></div>
-              </div>
-            </a>
-            <div class="max-w-xl">
-              <div class="mt-8 flex items-center gap-x-4 text-xs">
-                <time datetime="2020-03-16" class="text-gray-400"
-                  >Nov 28, 2023</time
-                >
-                <a
-                  class="relative z-10 rounded-full bg-gray-600 px-3 py-1.5 font-medium text-white"
-                  >Recording</a
-                >
-              </div>
-              <div class="group relative">
-                <h3
-                  class="mt-3 text-lg font-semibold leading-6 text-gray-200 group-hover:text-gray-400"
-                >
-                  <a href="#">
-                    <span class="absolute inset-0"></span>
-                    Parallel Rooms Recording & Mixing
-                  </a>
-                </h3>
-                <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-300">
-                  Illo sint voluptas. Error voluptates culpa eligendi. Hic vel
-                  totam vitae illo. Non aliquid explicabo necessitatibus unde.
-                  Sed exercitationem placeat consectetur nulla deserunt vel.
-                  Iusto corrupti dicta.
-                </p>
-              </div>
-              <div class="relative mt-8 flex items-center gap-x-4">
-                <div class="text-sm leading-6">
-                  <p class="font-semibold text-gray-100">
-                    <a href="#">
-                      <span class="absolute inset-0"></span>
-                      Adam Maka
-                    </a>
-                  </p>
-                  <p class="text-gray-400">The Hiraeth</p>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article
-            class="flex flex-col items-start justify-between"
-            data-article-id="2"
-          >
-            <a href="#">
-              <div class="relative w-full">
-                <img
-                  src="img/Ethan Simons - Bleak.JPG"
-                  alt=""
-                  class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                />
-                <div
-                  class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 bg-gradient-to-tl from-gray-300/40 to-transparent"
-                ></div>
-              </div>
-            </a>
-            <div class="max-w-xl">
-              <div class="mt-8 flex items-center gap-x-4 text-xs">
-                <time datetime="2020-03-16" class="text-gray-400"
-                  >Nov 13, 2023</time
-                >
-                <a
-                  class="relative z-10 rounded-full bg-amber-600 px-3 py-1.5 font-medium text-white"
-                  >Mixing</a
-                >
-              </div>
-              <div class="group relative">
-                <h3
-                  class="mt-3 text-lg font-semibold leading-6 text-gray-200 group-hover:text-gray-400"
-                >
-                  <a href="#">
-                    <span class="absolute inset-0"></span>
-                    Parallel Rooms Recording & Mixing
-                  </a>
-                </h3>
-                <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-300">
-                  Illo sint voluptas. Error voluptates culpa eligendi. Hic vel
-                  totam vitae illo. Non aliquid explicabo necessitatibus unde.
-                  Sed exercitationem placeat consectetur nulla deserunt vel.
-                  Iusto corrupti dicta.
-                </p>
-              </div>
-              <div class="relative mt-8 flex items-center gap-x-4">
-                <div class="text-sm leading-6">
-                  <p class="font-semibold text-gray-100">
-                    <a href="#">
-                      <span class="absolute inset-0"></span>
-                      Ethan Simons
-                    </a>
-                  </p>
-                  <p class="text-gray-400">Bleak</p>
-                </div>
-              </div>
-            </div>
-          </article>
-          <!-- More posts... -->
+    <!-- Script -->
+    <div class="">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:mx-0">
+          <div class="mx-auto max-w-7xl">
+            <h2
+              class="sm:mt-20 mt-14 mb-8 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            >
+              Audio work
+            </h2>
+          </div>
         </div>
       </div>
-    </div>
-    <script>
-      // Function to handle intersection changes
-      function handleIntersection(entries, observer) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove("opacity-0");
-            observer.unobserve(entry.target);
+      <div class="bg-transparent">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:max-w-full lg:mx-0">
+            <div
+              class="lg:mx-0 lg:max-w-none mt-8 lg:grid-cols-3 grid max-w-full sm:grid-cols-2 grid-cols-1 gap-x-8 gap-y-8"
+            >
+              <article
+                class="flex flex-col items-start justify-start"
+                data-article-id="1"
+              >
+                <audio
+                  id="song1"
+                  class="inline-block rounded-full w-full mr-auto bg-gray-400"
+                  controls
+                >
+                  <source
+                    src="https://open.spotify.com/track/7DE0I3buHcns00C0YEsYsY?si=5e0442c12f514f04"
+                    type="audio/mpeg"
+                  />
+                </audio>
+
+                <div class="max-w-xl">
+                  <div
+                    class="mt-6 sm:w-full flex flex-wrap gap-x-2 gap-y-[1.1rem] sm:text-xs text-[0.68rem]"
+                  >
+                    <div class="inline-block">
+                      <a
+                        class="relative z-10 rounded-full bg-amber-600 px-3 py-1.5 font-medium text-white"
+                        >Mixing</a
+                      >
+                    </div>
+                    <div class="inline-block">
+                      <a
+                        class="relative z-10 rounded-full bg-gray-500 px-3 py-1.5 font-medium text-white"
+                        >Mastering</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="group relative">
+                    <h3 class="mt-4 text-xl leading-6 text-gray-200">
+                      The Year - Waiting for Audio
+                    </h3>
+                  </div>
+                  <div class="relative mt-0 flex items-center gap-x-4">
+                    <div class="text-sm leading-6">
+                      <p class="font-bold text-gray-100">
+                        <span class="absolute inset-0"></span>
+                        Bastion
+                      </p>
+                      <p class="text-gray-400 text-xs">June 2023</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="flex flex-col items-start justify-start"
+                data-article-id="2"
+              >
+                <audio
+                  id="song2"
+                  class="inline-block rounded-full w-full mr-auto bg-gray-400"
+                  controls
+                >
+                  <source
+                    src="img/Jordan_Williams_-_Saviour_ft._Kyle_Lawrence_Mix_draft_2.mp3"
+                    type="audio/mpeg"
+                  />
+                </audio>
+
+                <div class="max-w-xl">
+                  <div
+                    class="mt-6 sm:w-full flex flex-wrap gap-x-2 gap-y-[1.1rem] sm:text-xs text-[0.68rem]"
+                  >
+                    <div class="inline-block">
+                      <a
+                        class="relative z-10 rounded-full bg-amber-600 px-3 py-1.5 font-medium text-white"
+                        >Mixing</a
+                      >
+                    </div>
+                    <div class="inline-block">
+                      <a
+                        class="relative z-10 rounded-full bg-gray-500 px-3 py-1.5 font-medium text-white"
+                        >Mastering</a
+                      >
+                    </div>
+                    <div class="inline-block">
+                      <a
+                        class="relative z-10 rounded-full bg-gray-700 px-3 py-1.5 font-medium text-white"
+                        >Recording</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="group relative">
+                    <h3 class="mt-4 text-xl leading-6 text-gray-200">
+                      Saviour
+                    </h3>
+                  </div>
+                  <div class="relative mt-0 flex items-center gap-x-4">
+                    <div class="text-sm leading-6">
+                      <p class="font-bold text-gray-100 line-clamp-1">
+                        Jordan Williams ft. Kyle Lawrence
+                      </p>
+                      <p class="text-gray-400 text-xs">July 2023</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="flex flex-col items-start justify-start"
+                data-article-id="3"
+              >
+                <audio
+                  id="song3"
+                  class="inline-block rounded-full w-full mr-auto bg-gray-400"
+                  controls
+                >
+                  <source
+                    src="img/Circles_pop_punk_cover_-_Final_Mix.mp3"
+                    type="audio/mpeg"
+                  />
+                </audio>
+                <div class="max-w-xl">
+                  <div
+                    class="mt-6 sm:w-full flex flex-wrap gap-x-2 gap-y-[1.1rem] sm:text-xs text-[0.68rem]"
+                  >
+                    <div class="inline-block">
+                      <a
+                        class="relative z-10 rounded-full bg-amber-600 px-3 py-1.5 font-medium text-white"
+                        >Mixing</a
+                      >
+                    </div>
+                    <div class="inline-block">
+                      <a
+                        class="relative z-10 rounded-full bg-gray-500 px-3 py-1.5 font-medium text-white"
+                        >Mastering</a
+                      >
+                    </div>
+                    <div class="inline-block">
+                      <a
+                        class="relative z-10 rounded-full bg-gray-700 px-3 py-1.5 font-medium text-white"
+                        >Recording</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="group relative">
+                    <h3
+                      class="mt-4 line-clamp-1 text-xl leading-6 text-gray-200"
+                    >
+                      Circles (Pop Goes Punk)
+                    </h3>
+                  </div>
+                  <div class="relative mt-0 flex items-center gap-x-4">
+                    <div class="text-sm leading-6">
+                      <p class="font-bold text-gray-100 line-clamp-1">
+                        Jordan Williams
+                      </p>
+                      <p class="text-gray-400 text-xs">September 2022</p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- More posts... -->
+          </div>
+        </div>
+
+        <div id="fadeDiv"" class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:mx-0">
+            <h2
+              class="mt-24 mb-8 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            >
+              Testimonials
+            </h2>
+          </div>
+        </div>
+        <div id="fadeDiv" class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:max-w-full lg:mx-0">
+            <div
+              class="lg:mx-0 lg:max-w-none lg:grid-cols-3 grid max-w-full sm:grid-cols-2 grid-cols-1 gap-x-8 gap-y-12"
+            >
+              <article
+                class="flex flex-col bg-gradient-to-br from-gray-600/5 to-gray-300/[8%] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm items-start justify-start"
+                data-article-id="4"
+              >
+                <a href="Parallel-Rooms.html">
+                  <div class="relative w-full">
+                    <img
+                      src="img/Oskar Sundberg - Parallel Rooms.JPG"
+                      alt=""
+                      class="w-full rounded-2xl object-cover aspect-[3/2]"
+                    />
+                    <div class="absolute top-0 left-0 py-0 px-2">
+                      <div
+                        class="mt-6 sm:w-full flex flex-wrap gap-x-2 gap-y-[1.1rem] sm:text-xs text-[0.68rem]"
+                      >
+                        <div class="inline-block">
+                          <a
+                            class="relative z-10 rounded-full bg-amber-600/70 backdrop-blur-sm px-3 py-1.5 font-medium text-white"
+                            >Mixing</a
+                          >
+                        </div>
+                        <div class="inline-block">
+                          <a
+                            class="relative z-10 rounded-full bg-gray-700/70 backdrop-blur-sm px-3 py-1.5 font-medium text-white"
+                            >Recording</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 bg-gradient-to-tl from-gray-300/40 to-transparent"
+                    ></div>
+                  </div>
+                </a>
+                <div class="max-w-xl">
+                  <div class="group relative">
+                    <div class="text-sm mt-3 leading-6">
+                      <p class="text-gray-500 text-xs">November 2021</p>
+                    </div>
+                    <h3
+                      class="text-lg mt-4 leading-6 text-white group-hover:text-gray-400"
+                    >
+                      <a href="Parallel-Rooms.html">
+                        <span class="absolute inset-0"></span>
+                        Parallel Rooms
+                      </a>
+                    </h3>
+                  </div>
+                  <div class="text-sm mt-1 leading-6">
+                    <p class="text-gray-400 text-[0.82rem] leading-[1.15rem]">
+                      “Knowledgeable and easy to work with. He listened to my
+                      ideas and understood what was required in order to bring
+                      them to life.<br /><br />
+
+                      Highly recommend him for anyone looking for that bit of
+                      help when recording a track.”
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="flex flex-col bg-gradient-to-br from-gray-600/5 to-gray-300/[8%] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm items-start justify-start"
+                data-article-id="5"
+              >
+                <a href="Parallel-Rooms.html">
+                  <div class="relative w-full">
+                    <img
+                      src="img/Adam Maka - The Hiraeth.jpg"
+                      alt=""
+                      class="w-full rounded-2xl object-cover aspect-[3/2]"
+                    />
+                    <div class="absolute top-0 left-0 py-0 px-2">
+                      <div
+                        class="mt-6 sm:w-full flex flex-wrap gap-x-2 gap-y-[1.1rem] sm:text-xs text-[0.68rem]"
+                      >
+                        <div class="inline-block">
+                          <a
+                            class="relative z-10 rounded-full bg-amber-600/70 backdrop-blur-sm px-3 py-1.5 font-medium text-white"
+                            >Mixing</a
+                          >
+                        </div>
+                        <div class="inline-block">
+                          <a
+                            class="relative z-10 rounded-full bg-gray-700/70 backdrop-blur-sm px-3 py-1.5 font-medium text-white"
+                            >Recording</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 bg-gradient-to-tl from-gray-300/40 to-transparent"
+                    ></div>
+                  </div>
+                </a>
+                <div class="max-w-xl">
+                  <div class="group relative">
+                    <div class="text-sm mt-3 leading-6">
+                      <p class="text-gray-500 text-xs">December 2023</p>
+                    </div>
+                    <h3
+                      class="text-lg mt-4 leading-6 text-white group-hover:text-gray-400"
+                    >
+                      <a href="Parallel-Rooms.html">
+                        <span class="absolute inset-0"></span>
+                        The Hiraeth
+                      </a>
+                    </h3>
+                  </div>
+                  <div class="relative mt-0 flex items-center gap-x-4"></div>
+                  <div class="text-sm mt-1 leading-6">
+                    <p class="text-gray-400 text-[0.82rem] leading-[1.15rem]">
+                      “The sound he found for us was incredible! It made the gig
+                      our most memorable to date.<br /><br />
+
+                      We as a band only hope that he will work with us again as
+                      he truly is a spectacular sound engineer”
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <article
+                class="flex flex-col bg-gradient-to-br from-gray-600/5 to-gray-300/[8%] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm items-start justify-start"
+                data-article-id="6"
+              >
+                <a href="Parallel-Rooms.html">
+                  <div class="relative w-full">
+                    <img
+                      src="img/Ethan Simons - Bleak.JPG"
+                      alt=""
+                      class="w-full rounded-2xl object-cover aspect-[3/2]"
+                    />
+                    <div class="absolute top-0 left-0 py-0 px-2">
+                      <div
+                        class="mt-6 sm:w-full flex flex-wrap gap-x-2 gap-y-[1.1rem] sm:text-xs text-[0.68rem]"
+                      >
+                        <div class="inline-block">
+                          <a
+                            class="relative z-10 rounded-full bg-amber-600/70 backdrop-blur-sm px-3 py-1.5 font-medium text-white"
+                            >Mixing</a
+                          >
+                        </div>
+                        <div class="inline-block">
+                          <a
+                            class="relative z-10 rounded-full bg-gray-700/70 backdrop-blur-sm px-3 py-1.5 font-medium text-white"
+                            >Recording</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 bg-gradient-to-tl from-gray-300/40 to-transparent"
+                    ></div>
+                  </div>
+                </a>
+                <div class="max-w-xl">
+                  <div class="group relative">
+                    <div class="text-sm mt-3 leading-6">
+                      <p class="text-gray-500 text-xs">January 2024</p>
+                    </div>
+                    <h3
+                      class="text-lg mt-4 leading-6 text-white group-hover:text-gray-400"
+                    >
+                      <a href="Parallel-Rooms.html">
+                        <span class="absolute inset-0"></span>
+                        Bleak
+                      </a>
+                    </h3>
+                  </div>
+                  <div class="relative mt-0 flex items-center gap-x-4"></div>
+                  <div class="text-sm mt-1 leading-6">
+                    <p class="text-gray-400 text-[0.82rem] leading-[1.15rem]">
+                      “I feel like I learnt a lot from just watching him do his
+                      thing!<br /><br />
+
+                      He is very knowledgeable in his craft and I am very
+                      grateful that I was able to work with him!”
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <article
+                class="flex flex-col bg-gradient-to-br from-gray-600/5 to-gray-300/[8%] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm items-start justify-start"
+                data-article-id="7"
+              >
+                <a href="Parallel-Rooms.html">
+                  <div class="relative w-full">
+                    <img
+                      src="img/Fin Robertson - Morpheus And The Broadcast.JPG"
+                      alt=""
+                      class="w-full rounded-2xl object-cover aspect-[3/2]"
+                    />
+                    <div class="absolute top-0 left-0 py-0 px-2">
+                      <div
+                        class="mt-6 sm:w-full flex flex-wrap gap-x-2 gap-y-[1.1rem] sm:text-xs text-[0.68rem]"
+                      >
+                        <div class="inline-block">
+                          <a
+                            class="relative z-10 rounded-full bg-gray-700/70 backdrop-blur-sm px-3 py-1.5 font-medium text-white"
+                            >Recording</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10 bg-gradient-to-tl from-gray-300/40 to-transparent"
+                    ></div>
+                  </div>
+                </a>
+                <div class="max-w-xl">
+                  <div class="group relative">
+                    <div class="text-sm mt-3 leading-6">
+                      <p class="text-gray-500 text-xs">July 2022</p>
+                    </div>
+                    <h3
+                      class="text-lg mt-4 leading-6 text-white group-hover:text-gray-400"
+                    >
+                      <a href="Parallel-Rooms.html">
+                        <span class="absolute inset-0"></span>
+                        Morpheus and the Broadcast
+                      </a>
+                    </h3>
+                  </div>
+                  <div class="relative mt-0 flex items-center gap-x-4"></div>
+                  <div class="text-sm mt-1 leading-6">
+                    <p class="text-gray-400 text-[0.82rem] leading-[1.15rem]">
+                      “The drums sounded punchy yet spacious, and that was just
+                      the raw sound from the mics.<br /><br />
+
+                      Jordan utilised the room sound spectacularly and created a
+                      great foundation for the E.P!”
+                    </p>
+                  </div>
+                </div>
+              </article>
+              <!-- More posts... -->
+            </div>
+          </div>
+        </div>
+
+        <script>
+          // Function to handle intersection changes
+          function handleIntersection(entries, observer) {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.remove("opacity-0");
+                observer.unobserve(entry.target);
+              }
+            });
           }
-        });
-      }
 
-      // Set up the Intersection Observer with a lower threshold for mobile
-      const observer = new IntersectionObserver(handleIntersection, {
-        root: null, // use the viewport as the root
-        threshold: 0.05, // trigger when 10% of the element is visible
-      });
+          // Set up the Intersection Observer with a lower threshold for mobile
+          const observer = new IntersectionObserver(handleIntersection, {
+            root: null, // use the viewport as the root
+            threshold: 0.05, // trigger when 10% of the element is visible
+          });
 
-      // Target elements with the 'fade-in' class
-      document.querySelectorAll(".fade-in").forEach((element) => {
-        observer.observe(element);
-      });
-    </script>
-    <hr
-      class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100"
-    />
-  </body>
-  <footer class="bg-transparent">
-    <div
-      class="mx-auto max-w-7xl overflow-hidden px-6 py-10 sm:py-4 lg:px-8 text-xs sm:text-sm leading-6"
-    >
-      <nav
-        class="-mb-6 flex items-center justify-center sm:space-x-10 space-x-5 text-center"
-        aria-label="Footer"
-      >
-        <div class="pb-6">
-          <a href="portfolio.html" class="text-white/50 hover:text-white/30"
-            >Portfolio</a
+          // Target elements with the 'fade-in' class
+          document.querySelectorAll(".fade-in").forEach((element) => {
+            observer.observe(element);
+          });
+        </script>
+        <hr
+          class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100"
+        />
+
+        <footer class="bg-transparent">
+          <div
+            class="mx-auto max-w-7xl overflow-hidden px-6 py-10 sm:py-4 lg:px-8 text-xs sm:text-sm leading-6"
           >
-        </div>
-        <div class="pb-6">
-          <a href="contact.html" class="text-white/50 hover:text-white/30"
-            >Contact</a
-          >
-        </div>
-        <div class="pb-6">
-          <a href="book.html" class="text-white/50 hover:text-white/30"
-            >Book Online</a
-          >
-        </div>
-      </nav>
-      <p class="mt-10 text-center text-xs leading-5 text-white/50">
-        &copy; Created by Horizon Creative Studio.
-      </p>
+            <nav
+              class="-mb-6 flex items-center justify-center sm:space-x-10 space-x-5 text-center"
+              aria-label="Footer"
+            >
+              <div class="pb-6">
+                <a
+                  href="portfolio.html"
+                  class="text-white/50 hover:text-white/30"
+                  >Portfolio</a
+                >
+              </div>
+              <div class="pb-6">
+                <a href="contact.html" class="text-white/50 hover:text-white/30"
+                  >Contact</a
+                >
+              </div>
+              <div class="pb-6">
+                <a href="book.html" class="text-white/50 hover:text-white/30"
+                  >Book Online</a
+                >
+              </div>
+            </nav>
+            <p class="mt-10 text-center text-xs leading-5 text-white/50">
+              &copy; Created by Horizon Creative Studio.
+            </p>
+          </div>
+        </footer>
+      </div>
     </div>
-  </footer>
+  </body>
 </html>

@@ -196,7 +196,7 @@
       </script>
       <div
         id="header-img"
-        class="w-full mb-20 brightness-50 h-[90vh] xs:h-screen lg:bg-fixed bg-cover bg-center flex justify-center items-center blur-[1.5px]"
+        class="w-full mb-20 brightness-50 h-[90vh] xs:h-screen lg:bg-fixed bg-cover bg-center flex justify-center items-center"
         style="background-image: url(img/IMG_2738_color.jpg)"
       >
         <!-- Your existing content -->
@@ -243,7 +243,7 @@
 
         <div class="text-center">
           <h1
-            class="text-[2rem] leading-[2.3rem] sm:leading-[4.8rem] sm:text-[4rem] xs:text-[3rem] xs:leading-[3.4rem] text-white font-light tracking-tighter"
+            class="text-[2rem] leading-[2.3rem] sm:leading-[4.8rem] sm:text-[4rem] xs:text-[3rem] xs:leading-[3.4rem] text-white font-extralight tracking-tighter"
           >
             Creating Harmony,
             <br />
@@ -349,31 +349,84 @@
         </p>
       </div>
     </div>
-    <div
-      class="bg-transparent pt-20 pb-4 sm:pt-20 fade-in opacity-0 transition-opacity duration-500"
-      id="targetDiv"
-    >
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl lg:text-center">
+    <div class="bg-transparent pt-20 pb-4 sm:pt-20" id="targetDiv">
+      <div class="mx-auto max-w-[90rem] px-6 lg:px-8">
+        <div
+          class="mx-auto max-w-2xl lg:max-w-5xl lg:text-center"
+          id="fadeDiv"
+          style="opacity: 0"
+        >
           <h2 class="text-base font-semibold leading-7 text-amber-600">
             Our Services
           </h2>
           <p
-            class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+            class="mt-2 text-3xl font-bold tracking-tight bg-gradient-to-b from-slate-50 via-gray-100 to-gray-400 bg-clip-text text-transparent sm:text-4xl"
           >
             Unrivaled sound mastery
           </p>
-          <p class="mt-6 text-lg leading-8 text-gray-300">
-            Step into the world of Reynish Audio, a premier audio engineering
-            powerhouse equipped with state-of-the-art studios dedicated to
-            delivering unparalleled excellence.
+          <p class="mt-6 text-md leading-7 text-gray-300">
+            Reynish Audio specialises in crafting the perfect sonic experience
+            for modern metal, metalcore, djent, and pop punk genres. With
+            services encompassing recording, mixing, and mastering, we provide
+            the essential tools to elevate your music to its fullest potential.
+            We're dedicated to refining and enhancing your sound at every stage.
+            From the initial recording sessions to the diligent touches of
+            mastering, trust Reynish Audio to be the driving force behind
+            transforming your musical vision into an extraordinary sonic
+            masterpiece.
           </p>
         </div>
+
+        <!-- Include Tailwind CSS and other HTML content here -->
+
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            function fadeOnScroll(elementId, threshold) {
+              const fadeDivs = document.querySelectorAll(`#${elementId}`);
+
+              fadeDivs.forEach(function (fadeDiv) {
+                function adjustOpacity() {
+                  let scrollPosition = window.scrollY;
+                  let elementOffset = fadeDiv.offsetTop;
+                  let elementHeight = fadeDiv.offsetHeight;
+                  let windowHeight = window.innerHeight;
+
+                  let fadeStart = elementOffset - windowHeight;
+                  let fadeEnd = elementOffset + elementHeight * threshold; // Set fadeEnd to a fraction of the div's height
+
+                  let opacity;
+
+                  if (
+                    scrollPosition >= fadeStart &&
+                    scrollPosition <= fadeEnd
+                  ) {
+                    opacity =
+                      (2 * (scrollPosition - fadeStart)) /
+                      (fadeEnd - fadeStart);
+                  } else {
+                    opacity = scrollPosition < fadeStart ? 0 : 1;
+                  }
+
+                  fadeDiv.style.opacity = opacity;
+                }
+
+                window.addEventListener("scroll", adjustOpacity);
+
+                // Adjust opacity on page load
+                adjustOpacity();
+              });
+            }
+
+            // Apply fading effect to any div with the specified ID
+            fadeOnScroll("fadeDiv", 0.5); // You can adjust the threshold here
+          });
+        </script>
+
         <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl
-            class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
+            class="grid max-w-xl grid-cols-1 gap-x-14 gap-y-16 lg:max-w-none lg:grid-cols-3"
           >
-            <div class="flex flex-col">
+            <div id="fadeDiv" class="flex flex-col">
               <dt
                 class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white"
               >
@@ -397,14 +450,16 @@
                 class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300"
               >
                 <p class="flex-auto">
-                  Capture your sound with our professional recording services.
-                  Our team ensures precision and excellence for a recording that
-                  reflects your artistry with clarity.
+                  Harnessing 8 years of recording expertise, Reynish Audio
+                  cultivates a unique blend of professionalism within a
+                  laid-back atmosphere. Expect a recording experience that
+                  captures the essence of your music with dynamic precision,
+                  ensuring the energetic punch your sound deserves.
                 </p>
                 <p class="mt-6"></p>
               </dd>
             </div>
-            <div class="flex flex-col">
+            <div id="fadeDiv" class="flex flex-col">
               <dt
                 class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white"
               >
@@ -425,14 +480,17 @@
                 class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300"
               >
                 <p class="flex-auto">
-                  Transform your tracks with our meticulous mixing services. Our
-                  engineers craft a harmonious blend that elevates each element
-                  of your music, creating a seamless listening experience.
+                  Your sound is personal, and at Reynish Audio, we understand
+                  its importance. Entrust your tracks to us, and experience a
+                  meticulous mixing process. You'll have three revisions to
+                  ensure your satisfaction, and STEM exports are available upon
+                  request. Expect your desired mix with detailed clarity in just
+                  a matter of days.
                 </p>
                 <p class="mt-6"></p>
               </dd>
             </div>
-            <div class="flex flex-col">
+            <div id="fadeDiv" class="flex flex-col">
               <dt
                 class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white"
               >
@@ -447,16 +505,16 @@
                   />
                 </svg>
 
-                Mastery Bundle
+                Mastering
               </dt>
               <dd
                 class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-300"
               >
                 <p class="flex-auto">
-                  Experience audio refinement with our all-in-one Mastery
-                  Bundle. This package integrates recording, mixing, and
-                  mastering services, enhancing every facet of your music for
-                  captivating brilliance.
+                  Refine your tracks to perfection with Reynish Audio's
+                  mastering service. Our thorough approach enhances every
+                  detail, ensuring your music achieves its optimal impact and
+                  sonic clarity.
                 </p>
                 <p class="mt-6"></p>
               </dd>
@@ -468,9 +526,7 @@
 
     <!-- Keep above -->
 
-    <div
-      class="bg-transparent mt-16 pb-12 sm:py-4 fade-in opacity-0 transition-opacity duration-500"
-    >
+    <div id="fadeDiv" class="bg-transparent mt-16 pb-12 sm:py-4">
       <div class="relative isolate">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div
@@ -501,10 +557,16 @@
                 </a>
               </div>
               <p class="mt-6 text-lg leading-8 text-gray-300">
-                Jordan is a dedicated audio engineer with a wealth of expertise
-                in the realm of music. His proficiency spans a variety of roles,
-                making him a versatile asset to any project. Here are some of
-                his notable skills:
+                Hi. I'm a UK based Recording & Mixing engineer specialising
+                within Modern Metal, Djent and Pop Punk.<br /><br />As a
+                multi-instrumentalist having been a part of bands, I understand
+                the complexities of trying to find individuals that can put in
+                the true integrative effort into your music and to assist you in
+                reaching your goals. From pre-production through to the
+                mastering process, I will help you reach your full potential as
+                a band or artist, and help you get heard by the demographic you
+                want to reach. Talk to me today and we can plan the best way to
+                advance your musical career.
               </p>
               <ul
                 role="list"
@@ -643,7 +705,7 @@
       <div class="px-6 py-5 sm:px-6 sm:py-16 lg:px-8">
         <div class="mx-auto max-w-4xl text-center">
           <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Any questions? Get in touch today.
+            Get in touch today.
           </h2>
           <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
             We'd love to hear from you! Whether you have questions, feedback, or
@@ -677,7 +739,7 @@
       // Set up the Intersection Observer with a lower threshold for mobile
       const observer = new IntersectionObserver(handleIntersection, {
         root: null, // use the viewport as the root
-        threshold: 0.05, // trigger when 10% of the element is visible
+        threshold: 0.1, // trigger when 10% of the element is visible
       });
 
       // Target elements with the 'fade-in' class
