@@ -1603,6 +1603,18 @@ video {
        column-gap: 3.5rem;
 }
 
+.gap-y-\[1\.5rem\] {
+  row-gap: 1.5rem;
+}
+
+.gap-y-\[20rem\] {
+  row-gap: 20rem;
+}
+
+.gap-y-\[40rem\] {
+  row-gap: 40rem;
+}
+
 .space-x-5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
