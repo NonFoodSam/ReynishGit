@@ -23,6 +23,19 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"
     ></script>
     <link rel="icon" type="image/x-icon" href="img/Logo.png" />
+    <style>
+      /* Custom CSS for animation */
+      .fade-slide {
+        opacity: 0;
+        transform: translateY(-15px);
+        transition: opacity 3s ease, transform 3s ease;
+      }
+
+      .fade-slide.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
   </head>
   <body>
     <div
@@ -243,12 +256,20 @@
 
         <div class="text-center">
           <h1
-            class="text-[2rem] leading-[2.3rem] sm:leading-[4.8rem] sm:text-[4rem] xs:text-[3rem] xs:leading-[3.4rem] text-white font-extralight tracking-tighter"
+            class="text-[2rem] leading-[2.3rem] sm:leading-[4.8rem] sm:text-[4rem] xs:text-[3rem] xs:leading-[3.4rem] text-white font-extralight tracking-tighter fade-slide"
+            id="animatedText"
           >
             Creating Harmony,
             <br />
             Mastering Precision.
           </h1>
+          <script>
+            // JavaScript to trigger the animation after page load
+            document.addEventListener("DOMContentLoaded", function () {
+              const animatedText = document.getElementById("animatedText");
+              animatedText.classList.add("active");
+            });
+          </script>
           <!-- <p
               class="px-5 mt-6 text-lg sm:flex leading-8 text-gray-200 justify-center"
             >
@@ -426,7 +447,10 @@
           <dl
             class="grid max-w-xl grid-cols-1 gap-x-14 gap-y-8 lg:max-w-none lg:grid-cols-3"
           >
-            <div id="fadeDiv" class="flex flex-col">
+            <div
+              id="fadeDiv"
+              class="flex flex-col bg-gradient-to-br from-gray-600/5 to-gray-300/[8%] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm"
+            >
               <dt
                 class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white"
               >
@@ -459,7 +483,10 @@
                 <p class="mt-6"></p>
               </dd>
             </div>
-            <div id="fadeDiv" class="flex flex-col">
+            <div
+              id="fadeDiv"
+              class="flex flex-col bg-gradient-to-br from-gray-600/5 to-gray-300/[8%] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm"
+            >
               <dt
                 class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white"
               >
@@ -490,7 +517,10 @@
                 <p class="mt-6"></p>
               </dd>
             </div>
-            <div id="fadeDiv" class="flex flex-col">
+            <div
+              id="fadeDiv"
+              class="flex flex-col bg-gradient-to-br from-gray-600/5 to-gray-300/[8%] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm"
+            >
               <dt
                 class="flex items-center gap-x-3 text-base font-semibold leading-7 text-white"
               >
