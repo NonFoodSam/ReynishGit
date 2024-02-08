@@ -874,6 +874,10 @@ video {
   margin-top: 24rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
@@ -1703,6 +1707,18 @@ video {
   stroke: #374151;
 }
 
+.stroke-amber-200 {
+  stroke: #fde68a;
+}
+
+.stroke-amber-600 {
+  stroke: #d97706;
+}
+
+.stroke-purple-600 {
+  stroke: #9333ea;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1843,6 +1859,16 @@ video {
 .py-40 {
   padding-top: 10rem;
   padding-bottom: 10rem;
+}
+
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.px-40 {
+  padding-left: 10rem;
+  padding-right: 10rem;
 }
 
 .pb-1 {
@@ -2003,6 +2029,11 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .font-bold {
@@ -2822,6 +2853,16 @@ video {
   .lg\:py-56 {
     padding-top: 14rem;
     padding-bottom: 14rem;
+  }
+
+  .lg\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .lg\:px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
 
   .lg\:text-center {
