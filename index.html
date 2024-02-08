@@ -419,7 +419,12 @@
                   fadeDiv.style.opacity = opacity;
                 }
 
-                window.addEventListener("scroll", adjustOpacity);
+                function handleScroll() {
+                  adjustOpacity();
+                }
+
+                window.addEventListener("scroll", handleScroll);
+                window.addEventListener("resize", handleScroll); // Add resize event listener
 
                 // Adjust opacity on page load
                 adjustOpacity();
@@ -431,7 +436,9 @@
           });
         </script>
 
-        <div class="mx-auto mt-14 max-w-2xl sm:mt-14 lg:mt-16 lg:max-w-none">
+        <div
+          class="mx-auto flex justify-center mt-14 max-w-2xl sm:mt-14 lg:mt-16 lg:max-w-none"
+        >
           <dl
             class="grid max-w-xl grid-cols-1 gap-x-14 gap-y-8 lg:max-w-none lg:grid-cols-3"
           >
