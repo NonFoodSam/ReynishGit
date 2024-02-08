@@ -13,6 +13,7 @@ module.exports = {
       animation: {
         "loop-scroll": "loop-scroll 80s linear infinite",
         "blob": "blob 7s infinite", // Adding the blob animation
+        tilt: 'tilt 10s infinite linear', // Adding the tilt animation
       },
       keyframes: {
         "loop-scroll": {
@@ -30,7 +31,18 @@ module.exports = {
             transform: "translate(-20px, 20px) scale(0.9)",
           },
           "100%": {
-            transform: "tranlate(0px, 0px) scale(1)",
+            transform: "translate(0px, 0px) scale(1)", // Corrected the typo in translate
+          },
+        },
+        tilt: {
+          '0%, 50%, 100%': {
+            transform: 'rotate(0deg)',
+          },
+          '25%': {
+            transform: 'rotate(0.5deg)',
+          },
+          '75%': {
+            transform: 'rotate(-0.5deg)',
           },
         },
       },
