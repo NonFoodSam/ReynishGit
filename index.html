@@ -23,19 +23,6 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"
     ></script>
     <link rel="icon" type="image/x-icon" href="img/Logo.png" />
-    <style>
-      /* Custom CSS for animation */
-      .fade-slide {
-        opacity: 0;
-        transform: translateY(-15px);
-        transition: opacity 3s ease, transform 3s ease;
-      }
-
-      .fade-slide.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
   </head>
   <body>
     <div
@@ -375,20 +362,18 @@
     </div>
     <div class="bg-transparent pt-20 pb-4 sm:pt-20" id="targetDiv">
       <div class="mx-auto max-w-[90rem] px-6 lg:px-8">
-        <div
-          class="mx-auto max-w-2xl lg:max-w-5xl lg:text-center"
-          id="fadeDiv"
-          style="opacity: 0"
-        >
-          <h2 class="text-base font-semibold leading-7 text-amber-600">
-            Our Services
-          </h2>
-          <p
-            class="mt-2 text-3xl font-bold tracking-tight bg-gradient-to-b from-slate-50 via-gray-100 to-gray-400 bg-clip-text text-transparent sm:text-4xl"
-          >
-            Unrivaled sound mastery
-          </p>
-          <p class="mt-6 text-md leading-7 text-gray-300">
+        <div class="mx-auto max-w-2xl lg:max-w-5xl lg:text-center">
+          <div id="fadeDiv">
+            <h2 class="text-base font-semibold leading-7 text-amber-600">
+              Our Services
+            </h2>
+            <p
+              class="mt-2 text-3xl font-bold tracking-tight bg-gradient-to-b from-slate-50 via-gray-100 to-gray-400 bg-clip-text text-transparent sm:text-4xl"
+            >
+              Unrivaled sound mastery
+            </p>
+          </div>
+          <p id="fadeDiv" class="mt-6 text-md leading-7 text-gray-300">
             Reynish Audio specialises in crafting the perfect sonic experience
             for modern metal, metalcore, djent, and pop punk genres. With
             services encompassing recording, mixing, and mastering, we provide

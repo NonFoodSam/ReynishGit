@@ -18,6 +18,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"
@@ -26,44 +29,44 @@
   </head>
   <body class="">
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", function () {
         function fadeOnScroll(elementId, threshold) {
           const fadeDivs = document.querySelectorAll(`#${elementId}`);
-      
-          fadeDivs.forEach(function(fadeDiv) {
+
+          fadeDivs.forEach(function (fadeDiv) {
             function adjustOpacity() {
               let scrollPosition = window.scrollY;
               let elementOffset = fadeDiv.offsetTop;
               let elementHeight = fadeDiv.offsetHeight;
               let windowHeight = window.innerHeight;
-      
+
               let fadeStart = elementOffset - windowHeight;
               let fadeEnd = elementOffset + elementHeight * threshold; // Set fadeEnd to a fraction of the div's height
-      
+
               let opacity;
-      
+
               if (scrollPosition >= fadeStart && scrollPosition <= fadeEnd) {
-                opacity = 2 * (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+                opacity =
+                  (2 * (scrollPosition - fadeStart)) / (fadeEnd - fadeStart);
               } else {
                 opacity = scrollPosition < fadeStart ? 0 : 1;
               }
-      
+
               fadeDiv.style.opacity = opacity;
             }
-      
+
             window.addEventListener("scroll", adjustOpacity);
-      
+
             // Adjust opacity on page load
             adjustOpacity();
           });
         }
-      
+
         // Apply fading effect to any div with the specified ID
         fadeOnScroll("fadeDiv", 0.03); // You can adjust the threshold here
       });
-      </script>
-      
-      
+    </script>
+
     <div class="bg-gray-900" x-data="{ openMenu : false }">
       <header
         class="relative inset-x-0 top-0 z-50 bg-gradient-to-b from-[#121212] nav-bg-initial"
@@ -193,7 +196,7 @@
           <svg
             class="absolute inset-x-0 -top-20 -z-10 h-[32rem] w-full stroke-gray-200 [mask-image:radial-gradient(18rem_18rem_at_center,white,transparent)]"
             aria-hidden="true"
-            >
+          >
             <defs>
               <pattern
                 id="1f932ae7-37de-4c0a-a8b0-a6e3b4d44b84"
@@ -218,8 +221,8 @@
           <div
             class="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl lg:ml-24 xl:ml-48"
             aria-hidden="true"
-            ></div>
-            <div class="overflow-hidden">
+          ></div>
+          <div class="overflow-hidden">
             <div
               class="mx-auto max-w-7xl px-6 sm:pb-12 sm:pt-24 pb-2 pt-8 lg:px-8"
             >
@@ -230,16 +233,20 @@
                   <h1
                     class="text-4xl font-bold tracking-tight bg-gradient-to-b from-slate-50 via-gray-100 to-gray-400 bg-clip-text text-transparent sm:text-6xl"
                   >
-                 
                     Portfolio
                   </h1>
                   <p
                     class="mt-6 text-lg leading-8 text-gray-400 sm:max-w-md lg:max-w-none"
                   >
-                  Explore a selection of recent client projects crafted by Reynish Audio. Feel free to review and share your thoughts or questions via the Contact page. I welcome your input and look forward to connecting with you.
+                    Explore a selection of recent client projects crafted by
+                    Reynish Audio. Feel free to review and share your thoughts
+                    or questions via the Contact page. I welcome your input and
+                    look forward to connecting with you.
                   </p>
                 </div>
-                
+              </div>
+            </div>
+          </div>
         </div>
       </main>
     </div>
@@ -300,17 +307,28 @@
               class="lg:mx-0 lg:max-w-none mt-8 lg:grid-cols-3 grid max-w-full sm:grid-cols-2 grid-cols-1 gap-x-8 gap-y-12"
             >
               <article
-                class="relative flex flex-col items-start justify-start"
+                class="relative flex flex-col items-start justify-start bg-gradient-to-b border border-white/5 from-[#222] to-[#161616] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm"
                 data-article-id="1"
               >
-              <div class="relative group w-full">
-                <div class="absolute -inset-0.5 bg-gradient-to-br from-amber-600 to-purple-800 rounded-full blur opacity-10 group-hover:opacity-30 transition duration-1000 group-hover:duration-700 animate-tilt"></div>
-                <button class="relative w-full rounded-full leading-none flex items-center divide-x divide-gray-600">
-                  <audio id="song1" class=" bg-[#171717] rounded-full w-full inline-block" controls>
-                    <source src="https://open.spotify.com/track/7DE0I3buHcns00C0YEsYsY?si=5e0442c12f514f04" type="audio/mpeg" />
-                  </audio>
-                </button>
-              </div>
+                <div class="relative group w-full">
+                  <div
+                    class="absolute -inset-0.5 bg-gradient-to-br from-amber-600 to-purple-800 rounded-full blur opacity-10 group-hover:opacity-70 transition duration-1000 group-hover:duration-700 animate-tilt"
+                  ></div>
+                  <button
+                    class="relative w-full rounded-full leading-none flex items-center divide-x divide-gray-600"
+                  >
+                    <audio
+                      id="song1"
+                      class="bg-[#171717] rounded-full w-full inline-block"
+                      controls
+                    >
+                      <source
+                        src="https://open.spotify.com/track/7DE0I3buHcns00C0YEsYsY?si=5e0442c12f514f04"
+                        type="audio/mpeg"
+                      />
+                    </audio>
+                  </button>
+                </div>
 
                 <div class="max-w-xl">
                   <div
@@ -348,17 +366,28 @@
               </article>
 
               <article
-                class="flex flex-col items-start justify-start"
+                class="flex flex-col items-start justify-start bg-gradient-to-b border border-white/5 from-[#222] to-[#161616] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm"
                 data-article-id="2"
               >
-              <div class="relative group w-full">
-                <div class="absolute -inset-0.5 bg-gradient-to-br from-amber-600 to-purple-800 rounded-full blur opacity-10 group-hover:opacity-30 transition duration-1000 group-hover:duration-700 animate-tilt"></div>
-                <button class="relative w-full rounded-full leading-none flex items-center divide-x divide-gray-600">
-                  <audio id="song1" class=" bg-[#171717] rounded-full w-full inline-block" controls>
-                    <source src="img/Jordan_Williams_-_Saviour_ft._Kyle_Lawrence_Mix_draft_2.mp3" type="audio/mpeg" />
-                  </audio>
-                </button>
-              </div>
+                <div class="relative group w-full">
+                  <div
+                    class="absolute -inset-0.5 bg-gradient-to-br from-amber-600 to-purple-800 rounded-full blur opacity-10 group-hover:opacity-70 transition duration-1000 group-hover:duration-700 animate-tilt"
+                  ></div>
+                  <button
+                    class="relative w-full rounded-full leading-none flex items-center divide-x divide-gray-600"
+                  >
+                    <audio
+                      id="song1"
+                      class="bg-[#171717] rounded-full w-full inline-block"
+                      controls
+                    >
+                      <source
+                        src="img/Jordan_Williams_-_Saviour_ft._Kyle_Lawrence_Mix_draft_2.mp3"
+                        type="audio/mpeg"
+                      />
+                    </audio>
+                  </button>
+                </div>
 
                 <div class="max-w-xl">
                   <div
@@ -400,17 +429,28 @@
                 </div>
               </article>
               <article
-                class="flex flex-col items-start justify-start"
+                class="flex flex-col items-start justify-start bg-gradient-to-b border border-white/5 from-[#222] to-[#161616] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm"
                 data-article-id="3"
               >
-              <div class="relative group w-full">
-                <div class="absolute -inset-0.5 bg-gradient-to-br from-amber-600 to-purple-800 rounded-full blur opacity-10 group-hover:opacity-30 transition duration-1000 group-hover:duration-700 animate-tilt"></div>
-                <button class="relative w-full rounded-full leading-none flex items-center divide-x divide-gray-600">
-                  <audio id="song1" class=" bg-[#171717] rounded-full w-full inline-block" controls>
-                    <source src="img/Circles_pop_punk_cover_-_Final_Mix.mp3" type="audio/mpeg" />
-                  </audio>
-                </button>
-              </div>
+                <div class="relative group w-full">
+                  <div
+                    class="absolute -inset-0.5 bg-gradient-to-br from-amber-600 to-purple-800 rounded-full blur opacity-10 group-hover:opacity-70 transition duration-1000 group-hover:duration-700 animate-tilt"
+                  ></div>
+                  <button
+                    class="relative w-full rounded-full leading-none flex items-center divide-x divide-gray-600"
+                  >
+                    <audio
+                      id="song1"
+                      class="bg-[#171717] rounded-full w-full inline-block"
+                      controls
+                    >
+                      <source
+                        src="img/Circles_pop_punk_cover_-_Final_Mix.mp3"
+                        type="audio/mpeg"
+                      />
+                    </audio>
+                  </button>
+                </div>
                 <div class="max-w-xl">
                   <div
                     class="mt-6 sm:w-full flex flex-wrap gap-x-2 gap-y-[1.1rem] sm:text-xs text-[0.68rem]"
@@ -532,7 +572,7 @@
                 </div>
               </article>
               <article
-              class="flex flex-col bg-gradient-to-b border border-white/5 from-[#222] to-[#161616] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm items-start justify-start"
+                class="flex flex-col bg-gradient-to-b border border-white/5 from-[#222] to-[#161616] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm items-start justify-start"
                 data-article-id="5"
               >
                 <a href="Parallel-Rooms.html">
@@ -593,7 +633,7 @@
               </article>
 
               <article
-              class="flex flex-col bg-gradient-to-b border border-white/5 from-[#222] to-[#161616] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm items-start justify-start"
+                class="flex flex-col bg-gradient-to-b border border-white/5 from-[#222] to-[#161616] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm items-start justify-start"
                 data-article-id="6"
               >
                 <a href="Parallel-Rooms.html">
@@ -653,7 +693,7 @@
                 </div>
               </article>
               <article
-              class="flex flex-col bg-gradient-to-b border border-white/5 from-[#222] to-[#161616] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm items-start justify-start"
+                class="flex flex-col bg-gradient-to-b border border-white/5 from-[#222] to-[#161616] p-5 drop-shadow-2xl rounded-2xl backdrop-blur-sm items-start justify-start"
                 data-article-id="7"
               >
                 <a href="Parallel-Rooms.html">
@@ -770,5 +810,6 @@
         </footer>
       </div>
     </div>
+    <script src="https://unpkg.com/taos@1.0.5/dist/taos.js"></script>
   </body>
 </html>
