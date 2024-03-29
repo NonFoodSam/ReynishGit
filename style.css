@@ -1,5 +1,5 @@
 body {
-    width: 100%;
+  width: 100%;
   background-color: #171717;
   /* animation: fadeInAnimation ease 3s;
             animation-iteration-count: 1;
@@ -224,15 +224,21 @@ Bundle */
   border-radius: 0.1rem; /* Adjust for rounded edges */
 }
 
-
 .nav-bg-initial {
-  background: linear-gradient(to bottom, #202020, /* your initial background color */);
+  background: linear-gradient(
+    to bottom,
+    #202020,
+    /* your initial background color */
+  );
 }
 
 .nav-bg-scrolled {
-  background: linear-gradient(to bottom, #e21414, /* your scrolled background color */);
+  background: linear-gradient(
+    to bottom,
+    #e21414,
+    /* your scrolled background color */
+  );
 }
-
 
 /* #background {
   background-image: url(img/IMG_2738.jpg);
@@ -244,7 +250,7 @@ Bundle */
 } */
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -267,21 +273,21 @@ Bundle */
   opacity: 0;
 }
 
-  
 /* mobile */
-  @media (max-width: 800px) {
-    html, body {
+@media (max-width: 800px) {
+  html,
+  body {
     overflow-x: hidden;
-    }
   }
+}
 
-  #hero {
-    max-width: 100%;
-  }
+#hero {
+  max-width: 100%;
+}
 
-  #recording:checked {
-    background-color: #FFA500;
-    border-color: #FFA500;
+#recording:checked {
+  background-color: #ffa500;
+  border-color: #ffa500;
 }
 
 #navbar {

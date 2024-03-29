@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker</title>
+    <!-- Include Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+      <h1 class="text-3xl font-semibold mb-4">Habit Tracker</h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Exercise Card -->
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <h2 class="text-lg font-semibold mb-2">Exercise</h2>
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-gray-600">
+              Status:
+              <span id="exerciseStatus" class="font-semibold text-green-500"
+                >Not Done</span
+              >
+            </p>
+            <button
+              id="exerciseBtn"
+              class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+              onclick="toggleDone('exercise')"
+            >
+              Mark Complete
+            </button>
+          </div>
+          <p class="text-sm text-gray-500">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+        <!-- Reading Card -->
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <h2 class="text-lg font-semibold mb-2">Reading</h2>
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-gray-600">
+              Status:
+              <span id="readingStatus" class="font-semibold text-green-500"
+                >Not Done</span
+              >
+            </p>
+            <button
+              id="readingBtn"
+              class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+              onclick="toggleDone('reading')"
+            >
+              Mark Complete
+            </button>
+          </div>
+          <p class="text-sm text-gray-500">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+        <!-- Meditation Card -->
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <h2 class="text-lg font-semibold mb-2">Meditation</h2>
+          <div class="flex items-center justify-between mb-4">
+            <p class="text-gray-600">
+              Status:
+              <span id="meditationStatus" class="font-semibold text-green-500"
+                >Not Done</span
+              >
+            </p>
+            <button
+              id="meditationBtn"
+              class="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+              onclick="toggleDone('meditation')"
+            >
+              Mark Complete
+            </button>
+          </div>
+          <p class="text-sm text-gray-500">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+      </div>
+      <!-- Overall Streak -->
+      <div class="mt-8 text-center">
+        <p class="text-xl font-semibold">
+          Overall Streak:
+          <span id="overallStreak" class="text-blue-500">0</span> days
+        </p>
+      </div>
+    </div>
+
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+
+    <script>
+      // Status for each habit
+      let exerciseDone = false;
+      let readingDone = false;
+      let meditationDone = false;
+
+      // Overall streak count
+      let overallStreak = 0;
+
+      // Function to toggle habit status
+      function toggleDone(habit) {
+        switch (habit) {
+          case "exercise":
+            exerciseDone = !exerciseDone;
+            document.getElementById("exerciseStatus").textContent = exerciseDone
+              ? "Done"
+              : "Not Done";
+            document.getElementById("exerciseBtn").textContent = exerciseDone
+              ? "Mark Incomplete"
+              : "Mark Complete";
+            break;
+          case "reading":
+            readingDone = !readingDone;
+            document.getElementById("readingStatus").textContent = readingDone
+              ? "Done"
+              : "Not Done";
+            document.getElementById("readingBtn").textContent = readingDone
+              ? "Mark Incomplete"
+              : "Mark Complete";
+            break;
+          case "meditation":
+            meditationDone = !meditationDone;
+            document.getElementById("meditationStatus").textContent =
+              meditationDone ? "Done" : "Not Done";
+            document.getElementById("meditationBtn").textContent =
+              meditationDone ? "Mark Incomplete" : "Mark Complete";
+            break;
+        }
+
+        // Check if all habits are marked as done, then increment overall streak
+        if (exerciseDone && readingDone && meditationDone) {
+          incrementOverallStreak();
+        }
+      }
+
+      // Function to increment overall streak
+      function incrementOverallStreak() {
+        overallStreak++;
+        // Update overall streak display
+        document.getElementById("overallStreak").textContent = overallStreak;
+        // Reset individual habit statuses
+        exerciseDone = false;
+        readingDone = false;
+        meditationDone = false;
+        // Reset individual status displays
+        document.getElementById("exerciseStatus").textContent = "Not Done";
+        document.getElementById("readingStatus").textContent = "Not Done";
+        document.getElementById("meditationStatus").textContent = "Not Done";
+        // Reset button texts
+        document.getElementById("exerciseBtn").textContent = "Mark Complete";
+        document.getElementById("readingBtn").textContent = "Mark Complete";
+        document.getElementById("meditationBtn").textContent = "Mark Complete";
+      }
+    </script>
+  </body>
+</html>
